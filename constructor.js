@@ -50,7 +50,7 @@ function Circle(radius) {
     return 2 * this.radius;
   };
 }
-  
+
 // 인스턴스의 생성
 const circle1 = new Circle(5);  // 반지름이 5인 Circle 객체를 생성
 const circle2 = new Circle(10); // 반지름이 10인 Circle 객체를 생성
