@@ -1,3 +1,52 @@
+//배열(array)은 여러 개의 값을 순차적으로 나열한 자료 구조이다. 
+const arr = ['apple', 'banana', 'orange'];
+//배열이 가지고 있는 값을 요소(element)라고 부른다. 자바스크립트의 모든 값은 배열의 요소가 될 수 있다.
+
+
+
+//일반 객체와 배열을 구분하는 가장 명확한 차이는 “값의 순서”와 “length 프로퍼티”이다.
+const arrr = [1, 2, 3];
+
+// 반복문으로 자료 구조를 순회하기 위해서는 자료 구조의 길이를 알아야 한다.
+for (let i = 0; i < arrr.length; i++) {
+  console.log(arrr[i]); // 1 2 3
+}
+
+
+// 희소 배열
+const sparse = [, 2, , 4];
+
+// 희소 배열의 length 프로퍼티 값은 요소의 개수와 일치하지 않는다.
+console.log(sparse.length); // 4
+console.log(sparse); // [empty, 2, empty, 4]
+
+
+// Array.of
+// 전달된 인수가 1개이고 숫자이더라도 인수를 요소로 갖는 배열을 생성한다.
+//Array.of 메소드는 전달된 인수를 요소로 갖는 배열을 생성한다.
+const arr1 = Array.of(1);
+console.log(arr1); // [1]
+
+const arr2 = Array.of(1, 2, 3);
+console.log(arr2); // [1, 2, 3]
+
+const arr3 = Array.of('string');
+console.log(arr3); // ['string']
+
+
+
+//Array.from
+//Array.from 메소드는 유사 배열 객체(array-like object) 또는 이터러블 객체(iterable object)를 변환하여 새로운 배열을 생성한다.
+// 문자열은 이터러블이다.
+const arr1 = Array.from('Hello');
+console.log(arr1); // ['H', 'e', 'l', 'l', 'o']
+
+// 유사 배열 객체를 새로운 배열을 변환하여 반환한다.
+const arr2 = Array.from({ length: 2, 0: 'a', 1: 'b' });
+console.log(arr2); // ['a', 'b']
+
+
+
 const macs = [
   { name: '2019 MacPro 16 MVVJ2KH/A', screen: 16, cpu: 'i7', ram: 16, ssd: 512, weight: 2, price: 2698000 },
   { name: '2019 MacPro 13 MV962KH/A', screen: 13.3, cpu: 'i5', ram: 8, ssd: 256, weight: 1.37, price: 1850000 },
