@@ -66,5 +66,55 @@ function Person(name) {
 
 const me = new Person('Lee');
 
+//함수호출방식
+//1. 일반 함수 호출
+//2. 메소드 호출
+//3. 생성자 함수 호출
+//4. Function.prototype.apply/call/bind 메소드에 의한 간접 호출
 
 
+
+//콜백 함수 내부의 this에도 전역 객체가 바인딩된다. 어떠한 함수라도 일반 함수로 호출되면 this에 전역 객체가 바인딩된다.
+var value = 1;
+
+const obj = {
+  value: 100,
+  foo() {
+    console.log("foo's this: ", this); // {value: 100, foo: ƒ}
+    // 콜백 함수 내부의 this에는 전역 객체가 바인딩된다.
+    setTimeout(function () {
+      console.log("callback's this: ", this); // window
+      console.log("callback's this.value: ", this.value); // 1
+    }, 100);
+  }
+};
+
+obj.foo();
+//*setTimeout 함수
+//setTimeout 함수는 두번째 매개변수에 전달한 시간(ms)만큼 대기한 다음, 첫번째 매개변수에 전달한 콜백 함수를 호출하는 타이머 함수이다. 위 예제의 경우, 100ms을 대기한 다음, 콜백 함수를 호출한다.
+
+
+
+//메소드 호출
+//메소드 내부의 this는 메소드를 호출한 객체, 즉 메소드 이름 앞의 마침표(.) 연산자 앞에 기술한 객체에 바인딩된다.
+const person = {
+  name: 'Lee',
+  getName() {
+    // 메소드의 this는 메소드를 호출한 객체에 바인딩된다.
+    return this.name;
+  }
+};
+
+// 메소드 getName을 호출한 객체는 person이다.
+console.log(person.getName());
+//주의할 것은 메소드 내부의 this는 메소드를 소유한 객체가 아닌 메소드를 호출한 객체에 바인딩된다는 것이다.
+const person = {
+  name: 'Lee',
+  getName() {
+    // 메소드의 this는 메소드를 호출한 객체에 바인딩된다.
+    return this.name;
+  }
+};
+
+// 메소드 getName을 호출한 객체는 person이다.
+console.log(person.getName()); // Lee
