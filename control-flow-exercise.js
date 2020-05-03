@@ -23,3 +23,22 @@ for(let i = 10; i > 0; i--){
   if (i % 2)
   console.log(i);
 }
+
+for(var i=0;i < 10; --i){
+  if(i % 2 !== 0)console.log(i)
+}
+
+var add = 0;
+
+for(var i = 0; i < 10; i++){
+  add +=i; 
+}
+console.log(add);
+
+var dice =[0,0];
+for(var i=0;i<7;i++){
+  for(var j=0;j<7;j++){
+    if(i + j === 6)console.log(dice = [i,j]);
+  };
+};
+

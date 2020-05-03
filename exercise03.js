@@ -57,6 +57,10 @@ for(var i=0;i < 10; i++){
     if(i % 2 === 0)console.log(i)
 }
 
+for(var i=0;i < 10; --i){
+    if(i % 2 !== 0)console.log(i)
+}
+
 var str = '';
 for(var i=0;i < 10; i++){
     if(i % 2 === 0) str += i;
@@ -96,13 +100,13 @@ status.type2 = {
     DEF:600
 }
 
-console.log(status.type1)
-console.log(status.type2)
-console.log(status)
+console.log(status.type1);
+console.log(status.type2);
+console.log(status);
 
 
 //요소로 0, 1, 2, 3, 4, 5 를 가진 배열을 만들어라
 let arr = [1,3,5,7,9];
 console.log(arr);
 
-console.log([2])
+console.log([2]);
