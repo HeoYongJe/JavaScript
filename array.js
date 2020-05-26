@@ -38,12 +38,12 @@ console.log(arr3); // ['string']
 //Array.from
 //Array.from 메소드는 유사 배열 객체(array-like object) 또는 이터러블 객체(iterable object)를 변환하여 새로운 배열을 생성한다.
 // 문자열은 이터러블이다.
-const arr1 = Array.from('Hello');
-console.log(arr1); // ['H', 'e', 'l', 'l', 'o']
+// const arr1 = Array.from('Hello');
+// console.log(arr1); // ['H', 'e', 'l', 'l', 'o']
 
-// 유사 배열 객체를 새로운 배열을 변환하여 반환한다.
-const arr2 = Array.from({ length: 2, 0: 'a', 1: 'b' });
-console.log(arr2); // ['a', 'b']
+// // 유사 배열 객체를 새로운 배열을 변환하여 반환한다.
+// const arr2 = Array.from({ length: 2, 0: 'a', 1: 'b' });
+// console.log(arr2); // ['a', 'b']
 
 
 
@@ -129,4 +129,52 @@ console.log(kind); // 양수
 
 
 
+const tat = [1,2]
+const rec = tat.unshift(3,4);
 
+console.log(rec)
+console.log(tat)
+
+const Queue = (function (){
+  function Queue(array = []) {
+    if (!Array.isArray(array)) {
+      throw new TypeError(`${array} is not an array.`);
+    }
+    this.array = array;
+  }
+  // 큐의 가장 마지막에 데이터를 밀어넣는다
+  Queue.prototype.push = function (value){
+    return this.array.push(value);
+  }
+  Queue.prototype.unshift = function (value){
+    return this.array.unshift(value)
+  }
+  return Queue;
+}());
+
+const queue = new Queue([01,2])
+console.log(queue)
+queue.push(3);
+console.log(queue)
+queue.unshift();
+console.log(queue)
+
+
+
+const arrrr = [1,2];
+const arrrrr = [3,4];
+
+let result1 = arrrrr.concat(arrrr)
+console.log(result1)
+console.log(arrrr.length) //2 ,원본배열 변하지 x
+
+const bey = [1,2,3,4]
+const bey1 = bey.splice(0,2,5);
+console.log(bey1)
+console.log(bey)
+
+
+
+const arr4 = [1,2,3,4,5,6,7]
+const result4 = arr4.includes(5,4);
+console.log(result4)
