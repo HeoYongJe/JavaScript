@@ -8,23 +8,24 @@ const $todoWriting = document.querySelector('.todoWriting');//작성하기 버�
 const $todoAdd = document.querySelector('.todoAdd'); //할일추가
 const $writeAdd = document.querySelector('.writeAdd'); //내용입력
 const $respons = document.querySelector('.respons'); 
-const $textNode = document.getElementById('todoWriteArea').firstchild;
+const $textNode = document.getElementById('todoWriteArea').firstChild;
 
 const listOpen = () => ([...$todoWriting.classList].includes('textOpen'));
 const setOpen = (boolean) => {
     if (boolean) {
         $todoWriting.classList.remove('textOpen');
         $writeAdd.style.display = 'none';
+        $todoWriteArea.style.display = 'flex';
+        $textNode.nodevalue = 'Close'; 
     } else {
         $todoWriting.classList.add('textOpen');
         $writeAdd.style.display = 'block';
         $todoWriteArea.style.display = 'block';   
-        // $textNode.nodevalue = 'Close';
-        $textNode.innerHTML = '<li><button>close</button></li>';       
+        // $textNode.nodevalue = 'Close';    
     }
 };
 
-$todoWriting.addEventListener = ('click', () => setOpen(listOpen()));
+$todoWriting.addEventListener('click', () => setOpen(listOpen()));
 
 
 
