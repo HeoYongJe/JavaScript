@@ -10,7 +10,7 @@ const $writeAdd = document.querySelector('.writeAdd'); //내용입력
 const $respons = document.querySelector('.respons'); 
 
 
-const listOpen = () => ([...$todoWriting.classList].includes('textOpen'));
+const textOpenArea = () => ([...$todoWriting.classList].includes('textOpen'));
 const setOpen = (boolean) => {
     if (boolean) {
         $todoWriting.classList.remove('textOpen');
@@ -24,10 +24,16 @@ const setOpen = (boolean) => {
     }
 };
 
-$todoWriting.addEventListener('click', () => setOpen(listOpen()));
+
+const output = function() {
+
+}
 
 
 
+
+$todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
+$writeAdd.addEventListener('click', () => output.values('');
 //작성하기 버튼을 클릭시에 textarea창이 열렀다 닫혔다를 할수 있도록 한다.
 //배열안에 객체로 보통가지고있는데 textarea에 작성한 내용이 배열로 가고 그 배열을 그려주는게 필요하다
 
