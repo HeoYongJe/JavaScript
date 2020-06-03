@@ -27,7 +27,26 @@ html,body{
   }  
   #todoWriteArea li button:nth-child(1){
     margin-left:0;
+    background:#fff;
+    border:1px solid #ccc;
+    border-radius:5px;
+    transition:0.4s;
   }
+  #todoWriteArea li button:nth-child(1):hover{
+    background: orange;
+    border-radius: 5px;
+    border: 1px solid #cb8b57;
+    color: #fff;
+    transition:0.2s;
+  } 
+  #todoWriteArea .dateBtn{
+    display:none;
+  }  
+  #todoWriteArea .dateBtn input{
+    border:1px solid #ccc;
+    padding:5.5px 10px;
+    border-radius: 5px;
+  }  
   #todoWriteArea textarea{
       width:500px;
       height:200px;      
