@@ -57,3 +57,14 @@ html,body{
       border-radius: 8px;
   }
 
+  #contentList{
+    margin-top:80px;
+  }
+  #contentList li{
+    width: 30%;
+    min-height:100px;
+    background:#f9f9f9;
+    border:1px solid #ccc;
+    border-radius:5px;
+    padding:10px;
+  }

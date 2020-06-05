@@ -32,10 +32,18 @@ const setOpen = (boolean) => {
 
 // 내용입력 없을 시 
 $todoAdd.onclick = function() {
-    if($writeAdd.value == ''){
-        alert('내용을 입렵해 주시기 바랍니다.')
-    }
+    // let textOut = $writeAdd.val();
 
+    if($writeAdd.value !== ''){
+        let textOut = '';
+        for(let i = 0; i < 1; i++){
+        console.log($contentList.innerHTML = textOut += `<li>${$contentList}</li>`
+        )};
+    }
+    else{ 
+        $writeAdd.value == '';
+        console.log(alert('내용을 입렵해 주시기 바랍니다.'));
+    }
 }
 
 
