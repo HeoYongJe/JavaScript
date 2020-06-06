@@ -3,7 +3,7 @@
 const $contentList = document.getElementById('contentList'); //리스트가 담길 공간
 const $todoWriteArea = document.getElementById('todoWriteArea');
 
-// setbutton class
+// setbutton class 
 const $todoWriting = document.querySelector('.todoWriting');//작성하기 버튼
 const $todoAdd = document.querySelector('.todoAdd'); //할일추가
 const $writeAdd = document.querySelector('.writeAdd');
@@ -30,15 +30,16 @@ const setOpen = (boolean) => {
     }
 };
 
-// 내용입력 없을 시 
-$todoAdd.onclick = function() {
-    // let textOut = $writeAdd.val();
 
+const outputAdd = (boolean) => {
     if($writeAdd.value !== ''){
-        let textOut = '';
+        let textOut = $writeAdd;
+        // $contentList.forEach(function(boolean){
+        //     console.log(textOut.push(boolean));
+        // });
         for(let i = 0; i < 1; i++){
-        console.log($contentList.innerHTML = textOut += `<li>${$contentList}</li>`
-        )};
+            console.log($contentList.innerHTML += `<li>${textOut}</li>`)
+        };
     }
     else{ 
         $writeAdd.value == '';
@@ -52,7 +53,7 @@ $todoAdd.onclick = function() {
 
 
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
-// $writeAdd.addEventListener('click', () => output($todoAdd()));
+$todoAdd.addEventListener('click', () => outputAdd());
 
 
 //작성하기 버튼을 클릭시에 textarea창이 열렀다 닫혔다를 할수 있도록 한다.

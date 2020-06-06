@@ -61,10 +61,13 @@ html,body{
     margin-top:80px;
   }
   #contentList li{
-    width: 30%;
+    width: 28%;
     min-height:100px;
     background:#f9f9f9;
     border:1px solid #ccc;
     border-radius:5px;
     padding:10px;
+    margin: 0 2% 2% 0;
+    float: left;
+    overflow: scroll;
   }
