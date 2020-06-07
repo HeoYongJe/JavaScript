@@ -9,15 +9,18 @@ html,body{
   .respons{
     max-width:600px;
     width:100%;
-    background:#ffc000;
+    background:url(../img/back02.jpg) no-repeat;
+    /* background:#ffc000; */
     margin:50px auto;
-    border:1px solid yellow;
+    border:1px solid #393d96;
     border-radius:5px;
     padding:50px;
   }
   h1{
-    font-size:30px;
+    font-size:40px;
     color:#fff;
+    text-align:center;
+    margin-bottom:50px;
   }
   ul,li,dl,dt,dd{margin:0;padding:0;list-style:none;}
 
@@ -41,9 +44,9 @@ html,body{
     transition:0.4s;
   }
   #todoWriteArea li button:nth-child(1):hover{
-    background: #f79200;
+    background: #3d8abf;
     border-radius: 5px;
-    border: 1px solid #f79200;
+    border: 1px solid #3d8abf;
     color: #fff;
     transition:0.2s;
   } 
@@ -56,27 +59,41 @@ html,body{
     border-radius: 5px;
   }  
   #todoWriteArea textarea{
-      width:500px;
+      width:100%;
       height:200px;      
       display:none;
       margin:20px 0 30px 0;
       padding:10px;
       border:1px solid #ccc;
       border-radius: 8px;
+      box-sizing: border-box;
   }
 
   #contentList{
     margin-top:80px;
-    overflow:hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   #contentList li{
-    width: 28%;
-    min-height:100px;
+    width: 27%;
+    height:150px;
     background:#f9f9f9;
     border:1px solid #ccc;
     border-radius:5px;
     padding:10px;
-    margin: 0 2% 2% 0;
-    float: left;
+    overflow-wrap: break-word;
     overflow-y: scroll;
+    position:relative;
+    margin-bottom:4%;
+  }
+  /* #contentList li::before{
+    border:1px solid #ccc;
+    position:absolute;
+  } */
+  .inputBtn{
+    display:block;
+    width:15px;
+    height:15px;
+    margin-bottom:10px;
   }

@@ -7,10 +7,13 @@ const $todoWriteArea = document.getElementById('todoWriteArea');
 const $todoWriting = document.querySelector('.todoWriting');
 const $inlineBtn = document.querySelector('.inlineBtn');
 const $todoAdd = document.querySelector('.todoAdd');
+const $todoDelete = document.querySelector('.todoDelete');
 const $writeAdd = document.querySelector('.writeAdd');
 const $layoutBtn = document.querySelector('.layoutBtn');
 const $dateBtn = document.querySelector('.dateBtn'); 
 const $respons = document.querySelector('.respons'); 
+const $inputBtn = document.querySelector('.inputBtn'); 
+const $textListItem = document.querySelectorAll('.textListItem'); 
 
 
 const textOpenArea = () => ([...$todoWriting.classList].includes('textOpen'));
@@ -37,7 +40,7 @@ const outputAdd = (boolean) => {
     if($writeAdd.value !== ''){
         let textOut = $writeAdd.value;
         for(let i = 0; i < 1; i++){
-            $contentList.innerHTML += `<input type=checkbox></input><li>${textOut}</li>`
+            $contentList.innerHTML += `<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
         };
     }
     else{ 
@@ -47,6 +50,18 @@ const outputAdd = (boolean) => {
 
 }
 
+const outputDeleteArea = (boolean) => {
+    let checkBtn = false;
+    for(let i = 0; i < $contentList.length; i++){
+      if($inputBtn[i] > 0){
+        checkBtn = true;
+        $textListItem.style.display = 'none';
+      } 
+      else{
+        checkBtn = false;
+      };
+    };
+};
 
 
 
@@ -54,7 +69,7 @@ const outputAdd = (boolean) => {
 
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', () => outputAdd());
-
+$todoDelete.addEventListener('click', () => outputDeleteArea());
 
 //작성하기 버튼을 클릭시에 textarea창이 열렀다 닫혔다를 할수 있도록 한다.
 //배열안에 객체로 보통가지고있는데 textarea에 작성한 내용이 배열로 가고 그 배열을 그려주는게 필요하다
