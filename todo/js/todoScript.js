@@ -3,6 +3,7 @@
 const $contentList = document.getElementById('contentList');
 const $todoWriteArea = document.getElementById('todoWriteArea');
 
+
 // setbutton class 
 const $todoWriting = document.querySelector('.todoWriting');
 const $inlineBtn = document.querySelector('.inlineBtn');
@@ -13,7 +14,8 @@ const $layoutBtn = document.querySelector('.layoutBtn');
 const $dateBtn = document.querySelector('.dateBtn'); 
 const $respons = document.querySelector('.respons'); 
 const $inputBtn = document.querySelector('.inputBtn'); 
-const $textListItem = document.querySelectorAll('.textListItem'); 
+const $textListItem = document.querySelector('.textListItem'); 
+
 
 
 const textOpenArea = () => ([...$todoWriting.classList].includes('textOpen'));
@@ -40,26 +42,31 @@ const outputAdd = (boolean) => {
     if($writeAdd.value !== ''){
         let textOut = $writeAdd.value;
         for(let i = 0; i < 1; i++){
-            $contentList.innerHTML += `<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
+            $contentList.innerHTML += `<li class="textListItem"><input type=checkbox value="checked" class="inputBtn"></input>${textOut}</li>`
         };
     }
     else{ 
         $writeAdd.value == '';
         alert('내용을 입렵해 주시기 바랍니다.');
+        const $todoDate = document.getElementsByTagName('.dateBtn > input')
+        $todoDate.value == '';
     }
 
 }
 
 const outputDeleteArea = (boolean) => {
-    let checkBtn = false;
-    for(let i = 0; i < $contentList.length; i++){
-      if($inputBtn[i] > 0){
-        checkBtn = true;
-        $textListItem.style.display = 'none';
-      } 
-      else{
-        checkBtn = false;
-      };
+    let checkBtn = [$contentList];
+
+    console.log(checkBtn.length)
+    // checkBtn[i].checked = false
+    for(let i = 0; i < checkBtn.length; i++){
+      if(checkBtn[i]){
+        $contentList.innerHTML = '';
+
+      }   
+    //   else{
+
+    //   };
     };
 };
 
