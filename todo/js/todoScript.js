@@ -43,6 +43,7 @@ const outputAdd = (boolean) => {
         let textOut = $writeAdd.value;
         for(let i = 0; i < 1; i++){
             $contentList.innerHTML += `<li class="textListItem"><input type=checkbox value="checked" class="inputBtn"></input>${textOut}</li>`
+            $writeAdd.value = '';
         };
     }
     else{ 
@@ -56,12 +57,12 @@ const outputAdd = (boolean) => {
 
 const outputDeleteArea = (boolean) => {
     let checkBtn = [$contentList];
-
+    let contentListArr = $contentList[i]
     console.log(checkBtn.length)
     // checkBtn[i].checked = false
     for(let i = 0; i < checkBtn.length; i++){
-      if(checkBtn[i]){
-        $contentList.innerHTML = '';
+      if(checkBtn[i].value = true){
+        contentListArr.innerHTML = '';
 
       }   
     //   else{

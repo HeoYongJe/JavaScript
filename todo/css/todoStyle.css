@@ -72,8 +72,9 @@ html,body{
   #contentList{
     margin-top:80px;
     display: flex;
-    justify-content: space-between;
+
     flex-wrap: wrap;
+
   }
   #contentList li{
     width: 27%;
@@ -85,8 +86,10 @@ html,body{
     overflow-wrap: break-word;
     overflow-y: scroll;
     position:relative;
-    margin-bottom:4%;
+    margin: 0 1.335%;
+    margin-bottom:3%;
   }
+ 
   /* #contentList li::before{
     border:1px solid #ccc;
     position:absolute;
