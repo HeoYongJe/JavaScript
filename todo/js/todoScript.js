@@ -4,7 +4,7 @@ const $contentList = document.getElementById('contentList');
 const $todoWriteArea = document.getElementById('todoWriteArea');
 
 
-// setbutton class 
+// setbutton class
 const $todoWriting = document.querySelector('.todoWriting');
 const $inlineBtn = document.querySelector('.inlineBtn');
 const $todoAdd = document.querySelector('.todoAdd');
@@ -15,6 +15,7 @@ const $dateBtn = document.querySelector('.dateBtn');
 const $respons = document.querySelector('.respons'); 
 const $inputBtn = document.querySelector('.inputBtn'); 
 const $textListItem = document.querySelector('.textListItem'); 
+const $listDelete = document.querySelector('.listDelete')
 
 
 
@@ -37,7 +38,6 @@ const setOpen = (boolean) => {
     }
 };
 
-
 const outputAdd = (boolean) => {
     if($writeAdd.value !== ''){
         let textOut = $writeAdd.value;
@@ -54,24 +54,22 @@ const outputAdd = (boolean) => {
     }
 
 }
+// const todoList = [{id: 1, content:'장보기', checked:false}, {id: 2, content:'밥먹기', checked:false}];
+const listArr = [
+    {id:1, content:`<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`,checked:false}
+
+];
 
 const outputDeleteArea = (boolean) => {
-    let checkBtn = [$contentList];
-    let contentListArr = $contentList[i]
-    console.log(checkBtn.length)
-    // checkBtn[i].checked = false
+    let checkBtn = [$contentList]; 
+
     for(let i = 0; i < checkBtn.length; i++){
-      if(checkBtn[i].value = true){
-        contentListArr.innerHTML = '';
+      if(checkBtn[i].checked !== 0){
+        $contentList.innerHTML = '';
 
       }   
-    //   else{
-
-    //   };
     };
 };
-
-
 
 
 
@@ -83,3 +81,6 @@ $todoDelete.addEventListener('click', () => outputDeleteArea());
 //배열안에 객체로 보통가지고있는데 textarea에 작성한 내용이 배열로 가고 그 배열을 그려주는게 필요하다
 
 
+//자료구조를 만든다
+//filter 을 이용하여 삭제할 대상만 지우고 다시그린다
+//투두리스트 새로 작성 -> 배열 추가 -> 다시그림 / 투두리스삭제 ->배열에서 삭제 -> 다시그림
