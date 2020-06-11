@@ -12,14 +12,8 @@ const $layoutBtn = document.querySelector('.layoutBtn');
 const $dateBtn = document.querySelector('.dateBtn'); 
 const $respons = document.querySelector('.respons'); 
 const $inputBtn = document.querySelector('.inputBtn'); 
+const $textListItem = document.querySelectorAll('.textListItem'); 
 const $textListItem = document.querySelector('.textListItem'); 
-
-
-//자료구조
-const listArr = [
-    {id:1, checked:true},
-    {id:2, checked:false}
-];
 
 
 
@@ -41,34 +35,45 @@ const setOpen = (boolean) => {
         $dateBtn.style.display = 'inline-block';  
     }
 };
-const outputAdd = () => {
-    let textOut = $writeAdd.value
-    let str = $`<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
+const outputAdd = (boolean) => {
     if($writeAdd.value !== ''){
-        for(let i = 1; i < listArr.length; i++){
+        let textOut = $writeAdd.value;
+        for(let i = 0; i < 1; i++){
             $contentList.innerHTML += `<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
+            $contentList.innerHTML += `<li class="textListItem"><input type=checkbox value="checked" class="inputBtn"></input>${textOut}</li>`
         };
-        $writeAdd.value ='';
     }
     else{ 
         $writeAdd.value == '';
         alert('내용을 입렵해 주시기 바랍니다.');
+        const $todoDate = document.getElementsByTagName('.dateBtn > input')
+        $todoDate.value == '';
     }
 
 }
-// const listArrAdd = () => ([...$textListItem.classList].includes('deleteAdd'));
+
 const outputDeleteArea = (boolean) => {
-
-    for(let i = 0; i < listArr.length; i++){
-      if(listArr.id[i] == true){
-        listArr.id[1].value = '';
-       console.log(listArr.checked)       
-      }   
-
-      else{ 
-        listArr.id[i] == false;
-        alert('해당 목록에 체크해 주시기 바랍니다')  
+    let checkBtn = false;
+    for(let i = 0; i < $contentList.length; i++){
+      if($inputBtn[i] > 0){
+        checkBtn = true;
+        $textListItem.style.display = 'none';
+      } 
+      else{
+        checkBtn = false;
       };
+    let checkBtn = [$contentList];
+
+    console.log(checkBtn.length)
+    // checkBtn[i].checked = false
+    for(let i = 0; i < checkBtn.length; i++){
+      if(checkBtn[i]){
+        $contentList.innerHTML = '';
+
+      }   
+    //   else{
+
+    //   };
     };
 };
 
@@ -77,3 +82,7 @@ $todoAdd.addEventListener('click', () => outputAdd());
 $todoDelete.addEventListener('click', () => outputDeleteArea());
 //작성하기 버튼을 클릭시에 textarea창이 열렀다 닫혔다를 할수 있도록 한다.
 //배열안에 객체로 보통가지고있는데 textarea에 작성한 내용이 배열로 가고 그 배열을 그려주는게 필요하다
+// const listArr = [
+//     {id:1, content:`<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`,checked:true},
+//     {id:2, content:`<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`,checked:false}
+// ];
