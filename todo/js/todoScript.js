@@ -16,8 +16,8 @@ const $textListItem = document.querySelector('.textListItem');
 
 
 //자료구조
-const listArr = [
-    {id:1, checked:true},
+const dataStructure = [
+    {id:1, content: checked:true},
     {id:2, checked:false}
 ];
 
@@ -43,7 +43,7 @@ const setOpen = (boolean) => {
 };
 const outputAdd = () => {
     let textOut = $writeAdd.value
-    let str = $`<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
+    // let str = $`<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
     if($writeAdd.value !== ''){
         for(let i = 1; i < listArr.length; i++){
             $contentList.innerHTML += `<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
