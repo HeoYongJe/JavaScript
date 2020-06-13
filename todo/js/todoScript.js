@@ -17,8 +17,8 @@ const $textListItem = document.querySelector('.textListItem');
 
 //자료구조
 const dataStructure = [
-    {id:1, content: checked:true},
-    {id:2, checked:false}
+    {id:1, content:1, checked:true},
+    {id:2, content:2, checked:false}
 ];
 
 
@@ -45,7 +45,7 @@ const outputAdd = () => {
     let textOut = $writeAdd.value
     // let str = $`<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
     if($writeAdd.value !== ''){
-        for(let i = 1; i < listArr.length; i++){
+        for(let i = 1; i < dataStructure.length; i++){
             $contentList.innerHTML += `<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
         };
         $writeAdd.value ='';
@@ -59,14 +59,14 @@ const outputAdd = () => {
 // const listArrAdd = () => ([...$textListItem.classList].includes('deleteAdd'));
 const outputDeleteArea = (boolean) => {
 
-    for(let i = 0; i < listArr.length; i++){
-      if(listArr.id[i] == true){
-        listArr.id[1].value = '';
+    for(let i = 0; i < dataStructure.length; i++){
+      if(dataStructure.id[i] == true){
+        dataStructure.id[1].value = '';
        console.log(listArr.checked)       
       }   
 
       else{ 
-        listArr.id[i] == false;
+        dataStructure.id[i] == false;
         alert('해당 목록에 체크해 주시기 바랍니다')  
       };
     };
