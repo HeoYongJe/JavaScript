@@ -60,9 +60,7 @@ const outputAdd = () => {
 const outputDeleteArea = (boolean) => {
 
     for(let i = 0; i < dataStructure.length; i++){
-      if(dataStructure.id[i] == true){
-        dataStructure.id[1].value = '';
-       console.log(listArr.checked)       
+      if(){       
       }   
 
       else{ 
