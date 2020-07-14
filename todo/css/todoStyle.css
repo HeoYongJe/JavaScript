@@ -9,10 +9,10 @@ html,body{
   .respons{
     max-width:600px;
     width:100%;
-    background:url(../img/back02.jpg) no-repeat;
-    /* background:#ffc000; */
+    /* background:url(../img/back02.jpg) no-repeat; */
+    background:#ffc000;
     margin:50px auto;
-    border:1px solid #393d96;
+    border:1px solid #yellow;
     border-radius:5px;
     padding:50px;
   }

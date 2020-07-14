@@ -57,18 +57,18 @@ const outputAdd = () => {
 
 }
 // const listArrAdd = () => ([...$textListItem.classList].includes('deleteAdd'));
-const outputDeleteArea = (boolean) => {
+// const outputDeleteArea = (boolean) => {
 
-    for(let i = 0; i < dataStructure.length; i++){
-      if(){       
-      }   
+//     for(let i = 0; i < dataStructure.length; i++){
+//       if(){       
+//       }   
 
-      else{ 
-        dataStructure.id[i] == false;
-        alert('해당 목록에 체크해 주시기 바랍니다')  
-      };
-    };
-};
+//       else{ 
+//         dataStructure.id[i] == false;
+//         alert('해당 목록에 체크해 주시기 바랍니다')  
+//       };
+//     };
+// };
 
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', () => outputAdd());
