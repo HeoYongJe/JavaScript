@@ -13,15 +13,7 @@ const $dateBtn = document.querySelector('.dateBtn');
 const $respons = document.querySelector('.respons'); 
 const $inputBtn = document.querySelector('.inputBtn'); 
 const $textListItem = document.querySelector('.textListItem'); 
-
-
-//자료구조
-const getTodos = () => {
-    $contentList = [
-        {id:1, content:1, checked:true},
-        {id:2, content:2, checked:false}
-    ];
-};
+const $todos = document.querySelector('.todos'); 
 
 
 const textOpenArea = () => ([...$todoWriting.classList].includes('textOpen'));
@@ -42,34 +34,56 @@ const setOpen = (boolean) => {
         $dateBtn.style.display = 'inline-block';  
     }
 };
-const outputAdd = () => {
-    let textOut = $writeAdd.value
-    // let str = $`<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
-    if($writeAdd.value !== ''){
-        for(let i = 1; i < contentList.length; i++){
-            $contentList.innerHTML += `<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
-        };
-        $writeAdd.value ='';
-    }
-    else{ 
-        $writeAdd.value == '';
-        alert('내용을 입렵해 주시기 바랍니다.');
-    }
 
-}
-// const listArrAdd = () => ([...$textListItem.classList].includes('deleteAdd'));
-// const outputDeleteArea = (boolean) => {
 
-//     for(let i = 0; i < dataStructure.length; i++){
-//       if(){       
-//       }   
 
-//       else{ 
-//         dataStructure.id[i] == false;
-//         alert('해당 목록에 체크해 주시기 바랍니다')  
-//       };
-//     };
-// };
+//자료구조
+const render = () => {
+    let str = '';
+    let renderTodo;
+  
+    [...$nav.children].forEach(child => {
+      if (![...child.classList].includes('active')) return;
+  
+      if (child.id === 'all') renderTodo = todos;
+      else if (child.id === 'active') renderTodo = nonCheckedTodos;
+      else renderTodo = checkedTodos;
+    });
+    renderTodo.forEach((todo) => {
+      str += `<li id="${todo.id}" class="todo-item">
+                <input id="ck-${todo.id}" class="checkbox" type="checkbox" ${todo.completed ? 'checked' : ''}>
+                <label for="ck-${todo.id}">${todo.content}</label>
+                <i class="remove-todo far fa-times-circle"></i>
+              </li>`;
+    });
+  
+    $todos.innerHTML = str;
+  };
+  
+  const countCompleted = () => {
+    const countCom = todos.filter(todo => todo.completed ).length;
+    $completedTodos.innerHTML = countCom;
+    $activeTodos.innerHTML = todos.length - countCom;
+  };
+  
+  const getTodos = () => {
+    todos = [
+      { id: 1, content: 'HTML', completed: false },
+      { id: 2, content: 'CSS', completed: true },
+      { id: 3, content: 'Javascript', completed: false }
+    ].sort((todo1, todo2) => todo2.id - todo1.id);
+  
+    checkedTodos = todos.filter(todo => todo.completed);
+    nonCheckedTodos = todos.filter(todo => !todo.completed);
+    countCompleted();
+  
+    render();
+  };
+
+
+
+
+
 
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', () => outputAdd());
