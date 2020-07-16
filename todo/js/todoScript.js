@@ -16,11 +16,12 @@ const $textListItem = document.querySelector('.textListItem');
 
 
 //자료구조
-const dataStructure = [
-    {id:1, content:1, checked:true},
-    {id:2, content:2, checked:false}
-];
-
+const getTodos = () => {
+    $contentList = [
+        {id:1, content:1, checked:true},
+        {id:2, content:2, checked:false}
+    ];
+};
 
 
 const textOpenArea = () => ([...$todoWriting.classList].includes('textOpen'));
@@ -45,7 +46,7 @@ const outputAdd = () => {
     let textOut = $writeAdd.value
     // let str = $`<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
     if($writeAdd.value !== ''){
-        for(let i = 1; i < dataStructure.length; i++){
+        for(let i = 1; i < contentList.length; i++){
             $contentList.innerHTML += `<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`
         };
         $writeAdd.value ='';
