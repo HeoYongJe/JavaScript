@@ -1,3 +1,4 @@
+// setbutton id 
 const $contentList = document.getElementById('contentList');
 const $todoWriteArea = document.getElementById('todoWriteArea');
 
