@@ -15,6 +15,10 @@ const $inputBtn = document.querySelector('.inputBtn');
 const $textListItem = document.querySelector('.textListItem'); 
 const $todos = document.querySelector('.todos'); 
 
+//status
+let todos = [];
+
+
 
 const textOpenArea = () => ([...$todoWriting.classList].includes('textOpen'));
 const setOpen = (boolean) => {
@@ -34,7 +38,6 @@ const setOpen = (boolean) => {
         $dateBtn.style.display = 'inline-block';  
     }
 };
-
 
 
 //자료구조
