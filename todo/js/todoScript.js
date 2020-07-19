@@ -71,7 +71,7 @@ const getTodos = () => {
 
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', () => render());
-$todoDelete.addEventListener('click', () => outputDeleteArea());
+$todoDelete.addEventListener('click', () => outputDeleteArea(renderTodo()));
 //작성하기 버튼을 클릭시에 textarea창이 열렀다 닫혔다를 할수 있도록 한다.
 //배열안에 객체로 보통가지고있는데 textarea에 작성한 내용이 배열로 가고 그 배열을 그려주는게 필요하다
 
