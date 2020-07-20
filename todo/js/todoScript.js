@@ -78,3 +78,6 @@ $todoDelete.addEventListener('click', () => outputDeleteArea(renderTodo()));
 
 //setup / draw 함수 찾아보기 
 //자료형 구조를 만들어서 꺼내서 쓸 수 있게끔 만들기
+
+
+//forEach ->
