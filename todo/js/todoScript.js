@@ -80,4 +80,7 @@ $todoDelete.addEventListener('click', () => outputDeleteArea(renderTodo()));
 //자료형 구조를 만들어서 꺼내서 쓸 수 있게끔 만들기
 
 
-//forEach ->
+//forEach 리턴이 없다 / 
+//map은 리턴이 있다
+// filter() : 특정 조건에 맞는 배열 반환
+// includes() : 해당 값이 포함된지 확인
