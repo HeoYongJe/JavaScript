@@ -84,3 +84,15 @@ $todoDelete.addEventListener('click', () => outputDeleteArea(renderTodo()));
 //map은 리턴이 있다
 // filter() : 특정 조건에 맞는 배열 반환
 // includes() : 해당 값이 포함된지 확인
+
+
+
+// [배열내장함수 안에 인수를 무조건 함수로 받는다]
+// * 배열내장함수의 return의 의미  
+// forEach : 새로운 배열 아님, 리턴이 무조건 언디파인드
+// map : 새로운 배열 , return 값이 배열의 요소로 / 전체원본 길이 모두 필요할때(ex 가격수정, 인상등)
+// sort : 새로운 배열 ,  원본을 건드리므로 조심, 정렬개념, 
+// reduce : 누적 연산 나타낼때 (acc, cur) acc 는 누적 cur 현재 ,  
+// firter : 새로운 배열, return 값이 참인 요소만으로 이루어진 새로운 배열을 만든다 / 원본길이와 같거나 다 작을 때
+
+// 배열내장함수 고르는 방법  / 1. 새로운 배열이 필요한가 ? 2.특정값이 필요한가 (reduce) 이두개가 해당이 없으면 forEach
