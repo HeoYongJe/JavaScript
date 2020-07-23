@@ -59,15 +59,26 @@ const macs = [
 // 1. 16인치 이상인 맥북의 이름을 모두 출력하라
 // 2. rma이 8기가 이상인 맥북의 이름을 모두 출력하라
 
-// i = 0 은 초기값, 1번문제
+
 // for(let i = 0; i < macs.length; i++) {
 //   if(macs[i].screen >= 16) {
 //     console.log(macs[i].name);
 //   };
 // };
-macs.forEach(function mac(item,i,arr){
-  return i;
-}); // ??????
+
+function mac(){
+  if(macs.screen >= 16 ? macs.name : macs){
+    return mac
+  }
+};
+
+const sc = macs.forEach(mac())
+
+console.log(sc)
+
+// macs.forEach(function mac(item,i,arr){
+//   return i;
+// }); // ??????
 
 
 //2번문제
