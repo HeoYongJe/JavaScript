@@ -59,6 +59,25 @@ const macs = [
 // 1. 16인치 이상인 맥북의 이름을 모두 출력하라
 // 2. rma이 8기가 이상인 맥북의 이름을 모두 출력하라
 
+// 스크린이 16인치 이상이라면 노트북 이름을 모두 출력
+
+const macArea = macs.forEach(mac);
+console.log(macArea)
+
+function mac(macs){
+  if(macs.screen >= 16);
+  console.log(macs.name)
+};
+return;
+
+
+macs.forEach(mac => {
+  if(macs.screen >= 16){
+    console.log(macs.name >= 16);
+  }
+})
+console.log(macs.name)
+
 
 // for(let i = 0; i < macs.length; i++) {
 //   if(macs[i].screen >= 16) {
@@ -66,19 +85,24 @@ const macs = [
 //   };
 // };
 
-function mac(){
-  if(macs.screen >= 16 ? macs.name : macs){
-    return mac
-  }
-};
 
-const sc = macs.forEach(mac())
 
-console.log(sc)
+// const asd = function mac(){
+//   if(macs.screen >= 16){
+//     console.log(macs.name)
+//   }
+//   return macs.name
+// }
+// asd();
 
-// macs.forEach(function mac(item,i,arr){
-//   return i;
-// }); // ??????
+// function mac(){
+//   if(macs.screen >= 16){
+//     console.log(macs.name)
+//   }
+// };
+
+// const macArea = macs.forEach(mac);
+// console.log(macArea)
 
 
 //2번문제
