@@ -19,17 +19,32 @@ const macs = [
 //     };
 //   };
   
-  
 //   function mac(){
-//     if(macs[{screen}] >= 16){
-//     console.log(macs[{name}] >= 16);
+//     if(macs['screen'] >= 16){
+//       console.log(macs['name'] >= 16);
 //     }
 // };
-// const macArea = macs.forEach(mac);
+// const macArea = macs.forEach(mac('screen'));
 
 // console.log(macs.macArea)
 
+// const macsArea = macs.forEach(mac => {
+//   macName = mac.name
+//   if(mac.screen >= 16 && mac.name >= 16)
+//   console.log(mac.name)
+// })
+// console.log(macName)
 
+function z(mac){
+  if(mac.screen >= 16){
+    console.log(mac.name);
+  }
+};
+
+
+
+//변수 함수(화살표) 매개변수 원시값과 객체 
+//이론이랑 화살표함수
 
 const macArea = macs.filter(mac => mac.screen >=16).map(mac => mac.name)
 console.log(macArea)
@@ -52,9 +67,3 @@ console.log(aaa)
   //   };
   // };
   
-  
-  
-//   const sizeUp = macs.filter(mac => mac.screen >= 16).map(mac => mac.name);
-//   console.log(sizeUp)
-//   const sizeUpName = macs
-//   console.log(sizeUpName);
