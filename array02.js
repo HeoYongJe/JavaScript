@@ -13,27 +13,13 @@ const macs = [
   // 스크린이 16인치 이상이라면 16인치 이상의 노트북 이름을 모두 출력
   
   
-//   for(let i = 0; i < macs.length; i++) {
-//     if(macs[i].screen >= 16) {
-//       console.log(macs[i].name);
-//     };
-//   };
+  // for(let i = 0; i < macs.length; i++) {
+  //   if(macs[i].screen >= 16) {
+  //     console.log(macs[i].name);
+  //   };
+  // };
   
-//   function mac(){
-//     if(macs['screen'] >= 16){
-//       console.log(macs['name'] >= 16);
-//     }
-// };
-// const macArea = macs.forEach(mac('screen'));
 
-// console.log(macs.macArea)
-
-// const macsArea = macs.forEach(mac => {
-//   macName = mac.name
-//   if(mac.screen >= 16 && mac.name >= 16)
-//   console.log(mac.name)
-// })
-// console.log(macName)
 
 function z(mac){
   if(mac.screen >= 16){
@@ -66,4 +52,12 @@ console.log(aaa)
   //     console.log(macs[i].name)
   //   };
   // };
-  
+
+
+  function multiply(a, b) {
+    return a * b;
+}
+ 
+var result = multiply(5);
+ 
+console.log(result);
