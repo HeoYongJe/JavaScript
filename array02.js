@@ -21,13 +21,15 @@ const macs = [
   
 
 
-function z(mac){
+function a(mac){
   if(mac.screen >= 16){
     console.log(mac.name);
   }
 };
 
+const macc = macs.forEach(a);
 
+console.log(a)
 
 //변수 함수(화살표) 매개변수 원시값과 객체 
 //이론이랑 화살표함수
