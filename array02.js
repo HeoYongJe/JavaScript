@@ -56,10 +56,14 @@ console.log(aaa)
   // };
 
 
-  function multiply(a, b) {
+  function multiply(a, b = 1) {
     return a * b;
 }
  
 var result = multiply(5);
  
 console.log(result);
+
+const aa = ['낑깡','바나나','바나나']
+
+console.log(aa.indexOf('바나나'))
