@@ -48,20 +48,21 @@ const render = () => {
 
     renderTodo.forEach((todo) => {
       str += `<li id="${todo.id}" class="todo-item">
-                <input id="ck-${todo.id}" class="checkbox" type="checkbox" ${todo.completed ? 'checked' : ''}>
                 <i class="remove-todo far fa-times-circle"></i>
               </li>`;
     });
-    $contentList.innerHTML = str;
+$contentList.innerHTML = str;
 };
   
   
 const getTodos = () => {
-    todos = [
-      { id: 1, content: 'HTML', completed: false },
-      { id: 2, content: 'CSS', completed: true },
-      { id: 3, content: 'Javascript', completed: false }
-    ].sort((todo1, todo2) => todo2.id - todo1.id);
+    // todos = [
+    //   { id: 1, content: 'HTML', completed: false },
+    //   { id: 2, content: 'CSS', completed: true },
+    //   { id: 3, content: 'Javascript', completed: false }
+    // ].sort((todo1, todo2) => todo2.id - todo1.id);
+
+render()
 };
 
 
@@ -70,8 +71,8 @@ const getTodos = () => {
 
 
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
-$todoAdd.addEventListener('click', () => render());
-$todoDelete.addEventListener('click', () => outputDeleteArea(renderTodo()));
+// $todoAdd.addEventListener('click', () => render());
+// $todoDelete.addEventListener('click', () => outputDeleteArea(renderTodo()));
 //작성하기 버튼을 클릭시에 textarea창이 열렀다 닫혔다를 할수 있도록 한다.
 //배열안에 객체로 보통가지고있는데 textarea에 작성한 내용이 배열로 가고 그 배열을 그려주는게 필요하다
 
