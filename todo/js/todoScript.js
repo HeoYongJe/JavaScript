@@ -40,38 +40,36 @@ const setOpen = (boolean) => {
     }
 };
 
-
 //자료구조
-const render = () => {
-    let str = '';
-    let renderTodo;
-    
-    renderTodo.forEach(todo => {
-      str += `<li id="${todo.id}" class="todo-item">
-      <input id="ck-${todo.id}" class="checkbox" type="checkbox" ${todo.completed ? 'checked' : ''}>
-      </li>`;
-    });
-    $contentList.innerHTML = str;
-};
-  
-const getTodos = () => {
     todos = [
       { id: 1, content: 'HTML', checked : false },
       { id: 2, content: 'CSS', checked : false },
       { id: 3, content: 'Javascript', checked : false}
     ].sort((todo1, todo2) => todo2.id - todo1.id);
 
-render()
+
+
+
+const render = () => {
+    let str = '';
+    let renderTodo;
+
+    $renderTodo.forEach((todo) => {
+      str += `<li id="${todo.id}" class="todo-item">
+      <input id="ck-${todo.id}" class="checkbox" type="checkbox">
+      <p>${todo.content}</p>
+      </li>`;
+    });
+    $contentList.innerHTML = str;
 };
 
 
-
 //이벤트
-window.onload = getTodos;
+window.onload = todos;
 
 
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
-$todoAdd.addEventListener('click', () => render(renderTodo()));
+$todoAdd.addEventListener('click', () => render());
 // $todoDelete.addEventListener('click', () => outputDeleteArea(renderTodo()));
 
 
