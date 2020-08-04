@@ -64,6 +64,8 @@ html,body{
     border-radius: 5px;
   }  
   #todoWriteArea textarea{
+    outline-color: #f9f9f9;
+    outline-style: initial;
       width:100%;
       height:200px;      
       display:none;

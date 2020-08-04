@@ -32,6 +32,7 @@ const setOpen = (boolean) => {
     } else {
         $todoWriting.classList.add('textOpen');
         $inlineBtn.classList.add('inlineBtn');
+        // $layoutBtn.classList.add('active');
         $writeAdd.style.display = 'block';
         $todoWriteArea.style.display = 'block';   
         $todoWriting.innerHTML = 'Close';
@@ -40,48 +41,51 @@ const setOpen = (boolean) => {
     }
 };
 
+const render = () => {
+    
+    let str = '';
+    let renderTodo;
+
+    [...$todoWriteArea.children].forEach(child => {
+    if (child.class === 'layoutBtn') renderTodo = todos;
+    });
+
+    renderTodo.forEach(todo => {
+      str += `<li id="${todo.id}" class="todo-item">
+                <input id="ck-${todo.id}" class="checkbox" type="checkbox">
+                <p>${todo.content}</p>
+              </li>`;
+    });
+    $contentList.innerHTML = str;
+  };
+// 조건문 문제 ???
+
+
+
 //자료구조
+//이미 자료를 받았다 치기 때문에 저 자료구조가 렌더를 통해 그려져있어야 한다
+const getTodos = () => {
     todos = [
       { id: 1, content: 'HTML', checked : false },
       { id: 2, content: 'CSS', checked : false },
       { id: 3, content: 'Javascript', checked : false}
     ].sort((todo1, todo2) => todo2.id - todo1.id);
 
-
-
-
-const render = () => {
-    let str = '';
-    let renderTodo;
-
-    $renderTodo.forEach((todo) => {
-      str += `<li id="${todo.id}" class="todo-item">
-      <input id="ck-${todo.id}" class="checkbox" type="checkbox">
-      <p>${todo.content}</p>
-      </li>`;
-    });
-    $contentList.innerHTML = str;
+render()
 };
 
-
 //이벤트
-window.onload = todos;
+window.onload = getTodos;
 
 
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', () => render());
-// $todoDelete.addEventListener('click', () => outputDeleteArea(renderTodo()));
-
 
 // open 버튼을 클릭시 텍스트 창이 나타나면서 add 와 delete 버튼은 밑으로 내려가고 캘린더 버튼이 나온다 o
 // 자료를 받았다 치고 자료구조를 만든다
 // 고정된 html 나올 수 있도록 랜더를 짠다
 // add 버튼을 클릭시 텍스트 창에 입력한 내용이 출력된다
 // 출력된 내용은 체크박스를 통해 삭제 할 수 있다
-
-
-
-
 //작성하기 버튼을 클릭시에 textarea창이 열렀다 닫혔다를 할수 있도록 한다.
 //배열안에 객체로 보통가지고있는데 textarea에 작성한 내용이 배열로 가고 그 배열을 그려주는게 필요하다
 
