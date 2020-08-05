@@ -46,8 +46,14 @@ const render = () => {
     let str = '';
     let renderTodo;
 
-    [...$todoWriteArea.children].forEach(child => {
-    if (child.class === 'layoutBtn') renderTodo = todos;
+
+    [...$todoWriteArea.children].forEach(child => {   
+
+    if (child.className = 'layoutBtn') { 
+        renderTodo = todos;
+        // todos.vlaue;
+        }   
+
     });
 
     renderTodo.forEach(todo => {
@@ -56,10 +62,12 @@ const render = () => {
                 <p>${todo.content}</p>
               </li>`;
     });
+    console.log(renderTodo)
     $contentList.innerHTML = str;
   };
-// 조건문 문제 ???
 
+// 조건문 문제 ???
+//코드블럭
 
 
 //자료구조
@@ -70,8 +78,6 @@ const getTodos = () => {
       { id: 2, content: 'CSS', checked : false },
       { id: 3, content: 'Javascript', checked : false}
     ].sort((todo1, todo2) => todo2.id - todo1.id);
-
-render()
 };
 
 //이벤트
