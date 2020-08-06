@@ -48,12 +48,13 @@ const render = () => {
 
 
     [...$todoWriteArea.children].forEach(child => {   
+        if (![...child.classList].includes('active')) return;
 
-    if (child.className = 'layoutBtn') { 
-        renderTodo = todos;
-        // todos.vlaue;
+        if (child.className = 'layoutBtn') { 
+            renderTodo = todos;
+            // todos.vlaue;
         }   
-
+        return
     });
 
     renderTodo.forEach(todo => {
