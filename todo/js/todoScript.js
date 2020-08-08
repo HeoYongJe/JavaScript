@@ -50,11 +50,25 @@ const render = () => {
     [...$todoWriteArea.children].forEach(child => {   
         if (![...child.classList].includes('active')) return;
 
-        if (child.className = 'layoutBtn') { 
-            renderTodo = todos;
+        if ( $writeAdd.value === '') { 
+            alert('내용을 입렵해 주시기 바랍니다.'); 
             // todos.vlaue;
-        }   
-        return
+            }   
+        else{
+            child.className = 'layoutBtn'
+            renderTodo = todos;
+            
+        }
+
+        // if (child.className = 'layoutBtn') { 
+        //     renderTodo = todos;
+            
+        //     // todos.vlaue;
+        //     }   
+        // else{
+        //    $writeAdd.value === '';
+        //     alert('내용을 입렵해 주시기 바랍니다.'); 
+        // }
     });
 
     renderTodo.forEach(todo => {
