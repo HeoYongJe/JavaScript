@@ -85,4 +85,3 @@ $todoDelete.addEventListener('click', () => outputDeleteArea());
 // const listArr = [
 //     {id:1, content:`<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`,checked:true},
 //     {id:2, content:`<li class="textListItem"><input type=checkbox class="inputBtn"></input>${textOut}</li>`,checked:false}
-// ];

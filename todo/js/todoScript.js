@@ -20,7 +20,6 @@ const $todos = document.querySelector('.todos');
 let todos = [];
 
 
-
 const textOpenArea = () => ([...$todoWriting.classList].includes('textOpen'));
 const setOpen = (boolean) => {
     if (boolean) {
@@ -46,29 +45,10 @@ const render = () => {
     let str = '';
     let renderTodo;
 
-
     [...$todoWriteArea.children].forEach(child => {   
+
         if (![...child.classList].includes('active')) return;
-
-        if ( $writeAdd.value === '') { 
-            alert('내용을 입렵해 주시기 바랍니다.'); 
-            // todos.vlaue;
-            }   
-        else{
-            child.className = 'layoutBtn'
-            renderTodo = todos;
-            
-        }
-
-        // if (child.className = 'layoutBtn') { 
-        //     renderTodo = todos;
-            
-        //     // todos.vlaue;
-        //     }   
-        // else{
-        //    $writeAdd.value === '';
-        //     alert('내용을 입렵해 주시기 바랍니다.'); 
-        // }
+        if (child.id === 'todoOpen') renderTodo = todos;
     });
 
     renderTodo.forEach(todo => {
@@ -77,9 +57,12 @@ const render = () => {
                 <p>${todo.content}</p>
               </li>`;
     });
-    console.log(renderTodo)
+
     $contentList.innerHTML = str;
-  };
+    // console.log($contentList)
+    // console.log(str)
+};
+
 
 // 조건문 문제 ???
 //코드블럭
@@ -93,6 +76,8 @@ const getTodos = () => {
       { id: 2, content: 'CSS', checked : false },
       { id: 3, content: 'Javascript', checked : false}
     ].sort((todo1, todo2) => todo2.id - todo1.id);
+
+    render()
 };
 
 //이벤트
@@ -100,7 +85,19 @@ window.onload = getTodos;
 
 
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
-$todoAdd.addEventListener('click', () => render());
+$todoAdd.addEventListener('click', (e) => {
+    if (e.keyCode !== 13) return;
+
+        todos = [{ id: todos.length + 1, content: e.target.value, completed: false }, ...todos];
+  
+        e.target.value = '';
+  
+    render();
+});
+
+
+
+
 
 // open 버튼을 클릭시 텍스트 창이 나타나면서 add 와 delete 버튼은 밑으로 내려가고 캘린더 버튼이 나온다 o
 // 자료를 받았다 치고 자료구조를 만든다
