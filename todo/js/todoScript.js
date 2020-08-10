@@ -49,6 +49,9 @@ const render = () => {
 
         if (![...child.classList].includes('active')) return;
         if (child.id === 'todoOpen') renderTodo = todos;
+        // if (child.className = 'e' && $writeAdd === '') {   
+        //     alert('내용을 입력해 주세요');
+        // }
     });
 
     renderTodo.forEach(todo => {
@@ -76,8 +79,6 @@ const getTodos = () => {
       { id: 2, content: 'CSS', checked : false },
       { id: 3, content: 'Javascript', checked : false}
     ].sort((todo1, todo2) => todo2.id - todo1.id);
-
-    render()
 };
 
 //이벤트
@@ -86,10 +87,8 @@ window.onload = getTodos;
 
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', (e) => {
-    if (e.keyCode !== 13) return;
 
         todos = [{ id: todos.length + 1, content: e.target.value, completed: false }, ...todos];
-  
         e.target.value = '';
   
     render();
