@@ -79,6 +79,7 @@ const getTodos = () => {
       { id: 2, content: 'CSS', checked : false },
       { id: 3, content: 'Javascript', checked : false}
     ].sort((todo1, todo2) => todo2.id - todo1.id);
+    render()
 };
 
 //이벤트
@@ -88,7 +89,7 @@ window.onload = getTodos;
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', (e) => {
 
-        todos = [{ id: todos.length + 1, content: e.target.value, completed: false }, ...todos];
+        todos = [{ id: todos.length + 1, content: e.target.innerHTML, completed: false }, ...todos];
         e.target.value = '';
   
     render();
