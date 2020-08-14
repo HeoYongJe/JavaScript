@@ -87,11 +87,14 @@ window.onload = getTodos;
 
 
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
-$todoAdd.addEventListener('click', (e) => {
+$todoAdd.addEventListener('click', () => {
 
-        todos = [{ id: todos.length + 1, content: e.target.innerHTML, completed: false }, ...todos];
-        e.target.value = '';
-  
+        if($writeAdd.value === '') alert('내용을 입력해 주세요');
+        else(
+        todos = [{ id: todos.length + 1, content: $writeAdd.value, completed: false }, ...todos])
+
+        $writeAdd.value = '';
+        
     render();
 });
 
