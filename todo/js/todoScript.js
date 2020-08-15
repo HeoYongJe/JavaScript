@@ -15,10 +15,9 @@ const $respons = document.querySelector('.respons');
 const $inputBtn = document.querySelector('.inputBtn'); 
 const $textListItem = document.querySelector('.textListItem'); 
 const $todos = document.querySelector('.todos'); 
-
+const dateControl = document.querySelector('input[type="date"]');
 //status
 let todos = [];
-
 
 const textOpenArea = () => ([...$todoWriting.classList].includes('textOpen'));
 const setOpen = (boolean) => {
@@ -46,12 +45,8 @@ const render = () => {
     let renderTodo;
 
     [...$todoWriteArea.children].forEach(child => {   
-
         if (![...child.classList].includes('active')) return;
         if (child.id === 'todoOpen') renderTodo = todos;
-        // if (child.className = 'e' && $writeAdd === '') {   
-        //     alert('내용을 입력해 주세요');
-        // }
     });
 
     renderTodo.forEach(todo => {
@@ -62,13 +57,7 @@ const render = () => {
     });
 
     $contentList.innerHTML = str;
-    // console.log($contentList)
-    // console.log(str)
 };
-
-
-// 조건문 문제 ???
-//코드블럭
 
 
 //자료구조
@@ -99,7 +88,10 @@ $todoAdd.addEventListener('click', () => {
 });
 
 
-
+// 날짜
+dateControl.value = '2020-08-15';
+console.log(dateControl.value); 
+console.log(dateControl.valueAsNumber); 
 
 
 // open 버튼을 클릭시 텍스트 창이 나타나면서 add 와 delete 버튼은 밑으로 내려가고 캘린더 버튼이 나온다 o
