@@ -1,7 +1,6 @@
 {
   "name": "javascript",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,5 +16,14 @@
   },
   "dependencies": {
     "lodash": "^4.17.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeoYongJe/JavaScript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HeoYongJe/JavaScript/issues"
+  },
+  "homepage": "https://github.com/HeoYongJe/JavaScript#readme",
+  "description": ""
 }

@@ -29,8 +29,6 @@ function a(mac){
 
 const macc = macs.forEach(a);
 
-console.log(a)
-
 //변수 함수(화살표) 매개변수 원시값과 객체 
 //이론이랑 화살표함수
 

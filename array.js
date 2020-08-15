@@ -63,15 +63,6 @@ const macs = [
 
 
 
-// function mac(){
-//   if(macs.name >= 16){
-//   console.log(macs.name)
-//   }
-// };
-
-// const macArea = macs.forEach(mac);
-// console.log(macArea[0])
-
 
 const aaa = macs.forEach(mac => {
   if(macs.screen >= 16){
