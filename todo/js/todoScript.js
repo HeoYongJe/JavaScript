@@ -13,7 +13,6 @@ const $layoutBtn = document.querySelector('.layoutBtn');
 const $dateBtn = document.querySelector('.dateBtn'); 
 const $respons = document.querySelector('.respons'); 
 const $inputBtn = document.querySelector('.inputBtn'); 
-const $textListItem = document.querySelector('.textListItem'); 
 const $todos = document.querySelector('.todos'); 
 const dateControl = document.querySelector('input[type="date"]');
 //status
@@ -87,11 +86,26 @@ $todoAdd.addEventListener('click', () => {
     render();
 });
 
+$todoDelete.addEventListener('click', () => {
+
+    if(todos.value === '') alert('내용을 입력해 주세요');
+    else(
+    todos = [{ id: todos.length + 1, content: $writeAdd.value, completed: false }, ...todos])
+
+    $writeAdd.value = '';
+    
+render();
+});
 
 // 날짜
 dateControl.value = '2020-08-15';
 console.log(dateControl.value); 
 console.log(dateControl.valueAsNumber); 
+
+//체크시 코드
+//언체크시 코드
+//체크 후 클릭 시 내용이 사라져야 한다
+
 
 
 // open 버튼을 클릭시 텍스트 창이 나타나면서 add 와 delete 버튼은 밑으로 내려가고 캘린더 버튼이 나온다 o
