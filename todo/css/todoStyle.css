@@ -98,7 +98,9 @@ html,body{
     margin: 0 1.335%;
     margin-bottom:3%;
   }
- 
+ .remove-todo{
+   display:none;
+ }
   /* #contentList li::before{
     border:1px solid #ccc;
     position:absolute;

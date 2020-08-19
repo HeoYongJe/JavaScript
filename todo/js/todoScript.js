@@ -86,13 +86,9 @@ $todoAdd.addEventListener('click', () => {
     render();
 });
 
-$todoDelete.addEventListener('click', () => {
+$todoDelete.removeEventListener('click', () => {
+    if ([...$todo-item.classList].includes('remove-todo')) return;
 
-    if(todos.value === '') alert('내용을 입력해 주세요');
-    else(
-    todos = [{ id: todos.length + 1, content: $writeAdd.value, completed: false }, ...todos])
-
-    $writeAdd.value = '';
     
 render();
 });
@@ -104,7 +100,8 @@ console.log(dateControl.valueAsNumber);
 
 //체크시 코드
 //언체크시 코드
-//체크 후 클릭 시 내용이 사라져야 한다
+//체크 여부를 확인 한 후 , 체크된 todo-item 를 todoDelete 버튼을 클릭 하면 사라 진다.
+
 
 
 
