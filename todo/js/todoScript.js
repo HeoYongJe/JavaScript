@@ -14,7 +14,9 @@ const $dateBtn = document.querySelector('.dateBtn');
 const $respons = document.querySelector('.respons'); 
 const $inputBtn = document.querySelector('.inputBtn'); 
 const $todos = document.querySelector('.todos'); 
-const dateControl = document.querySelector('input[type="date"]');
+const $dateControl = document.querySelector('input[type="date"]');
+const $checkbox = document.querySelector('checkbox')
+ 
 //status
 let todos = [];
 
@@ -86,17 +88,20 @@ $todoAdd.addEventListener('click', () => {
     render();
 });
 
-$todoDelete.removeEventListener('click', () => {
-    if ([...$todo-item.classList].includes('remove-todo')) return;
 
-    
-render();
+$todoDelete.addEventListener('click', () => {
+    if ([...$todoWriteArea.children].includes('deleteTodo')) return;
+    if($checkbox.checked == true){
+        
+    }
+    render();
 });
 
+
 // 날짜
-dateControl.value = '2020-08-15';
-console.log(dateControl.value); 
-console.log(dateControl.valueAsNumber); 
+$dateControl.value = '2020-08-15';
+console.log($dateControl.value); 
+
 
 //체크시 코드
 //언체크시 코드

@@ -98,7 +98,7 @@ html,body{
     margin: 0 1.335%;
     margin-bottom:3%;
   }
- .remove-todo{
+ .deleteTodo{
    display:none;
  }
   /* #contentList li::before{
