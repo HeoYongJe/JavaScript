@@ -12,7 +12,6 @@ const $writeAdd = document.querySelector('.writeAdd');
 const $layoutBtn = document.querySelector('.layoutBtn');
 const $dateBtn = document.querySelector('.dateBtn'); 
 const $respons = document.querySelector('.respons'); 
-const $inputBtn = document.querySelector('.inputBtn'); 
 const $todos = document.querySelector('.todos'); 
 const $dateControl = document.querySelector('input[type="date"]');
 const $checkbox = document.querySelector('checkbox')
@@ -31,7 +30,6 @@ const setOpen = (boolean) => {
     } else {
         $todoWriting.classList.add('textOpen');
         $inlineBtn.classList.add('inlineBtn');
-        // $layoutBtn.classList.add('active');
         $writeAdd.style.display = 'block';
         $todoWriteArea.style.display = 'block';   
         $todoWriting.innerHTML = 'Close';
@@ -88,12 +86,11 @@ $todoAdd.addEventListener('click', () => {
     render();
 });
 
-
+let checkbox = document.querySelector('.checkbox')
+console.log(checkbox)
 $todoDelete.addEventListener('click', () => {
-    if ([...$todoWriteArea.children].includes('deleteTodo')) return;
-    if($checkbox.checked == true){
-        
-    }
+    console.log(checkbox)
+    todos = todos.filter(checkbox => checkbox.checked !== true); 
     render();
 });
 
