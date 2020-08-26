@@ -13,9 +13,10 @@ const $layoutBtn = document.querySelector('.layoutBtn');
 const $dateBtn = document.querySelector('.dateBtn'); 
 const $respons = document.querySelector('.respons'); 
 const $todos = document.querySelector('.todos'); 
-const $dateControl = document.querySelector('input[type="date"]');
+// const $dateControl = document.querySelector('input[type="date"]');
 const $checkbox = document.querySelector('checkbox')
- 
+
+
 //status
 let todos = [];
 
@@ -34,7 +35,6 @@ const setOpen = (boolean) => {
         $todoWriteArea.style.display = 'block';   
         $todoWriting.innerHTML = 'Close';
         $layoutBtn.style.display = 'inline-block';  
-        $dateBtn.style.display = 'inline-block';  
     }
 };
 
@@ -50,11 +50,11 @@ const render = () => {
 
     renderTodo.forEach(todo => {
       str += `<li id="${todo.id}" class="todo-item">
-                <input id="ck-${todo.id}" class="checkbox" type="checkbox">
+                <input id="ck-${todo.id}" class="checkbox" type="checkbox" value="">
                 <p>${todo.content}</p>
               </li>`;
+   
     });
-
     $contentList.innerHTML = str;
 };
 
@@ -63,9 +63,9 @@ const render = () => {
 //이미 자료를 받았다 치기 때문에 저 자료구조가 렌더를 통해 그려져있어야 한다
 const getTodos = () => {
     todos = [
-      { id: 1, content: 'HTML', checked : false },
-      { id: 2, content: 'CSS', checked : false },
-      { id: 3, content: 'Javascript', checked : false}
+      { id: 1, content: 'HTML', checked: false},
+      { id: 2, content: 'CSS', checked: false},
+      { id: 3, content: 'Javascript', checked: false}
     ].sort((todo1, todo2) => todo2.id - todo1.id);
     render()
 };
@@ -79,32 +79,41 @@ $todoAdd.addEventListener('click', () => {
 
         if($writeAdd.value === '') alert('내용을 입력해 주세요');
         else(
-        todos = [{ id: todos.length + 1, content: $writeAdd.value, completed: false }, ...todos])
+        todos = [{ id: todos.length + 1, content: $writeAdd.value, checked: false}, ...todos])
 
         $writeAdd.value = '';
         
     render();
 });
 
-let checkbox = document.querySelector('.checkbox')
-console.log(checkbox)
+let chk = todos = [{checked:true}]
+
+chk.addEventListener('click', (e) => {
+
+    window.onload;
+});
+
+
+
 $todoDelete.addEventListener('click', () => {
-    console.log(checkbox)
-    todos = todos.filter(checkbox => checkbox.checked !== true); 
+
+      todos = todos.filter(todo => todo.checked !== true);    
+
     render();
 });
 
 
+
 // 날짜
-$dateControl.value = '2020-08-15';
-console.log($dateControl.value); 
+// $dateControl.value = '2020-08-15';
+// console.log($dateControl.value); 
 
 
 //체크시 코드
 //언체크시 코드
 //체크 여부를 확인 한 후 , 체크된 todo-item 를 todoDelete 버튼을 클릭 하면 사라 진다.
 
-
+//감지
 
 
 // open 버튼을 클릭시 텍스트 창이 나타나면서 add 와 delete 버튼은 밑으로 내려가고 캘린더 버튼이 나온다 o
