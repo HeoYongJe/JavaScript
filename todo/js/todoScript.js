@@ -14,7 +14,7 @@ const $dateBtn = document.querySelector('.dateBtn');
 const $respons = document.querySelector('.respons'); 
 const $todos = document.querySelector('.todos'); 
 // const $dateControl = document.querySelector('input[type="date"]');
-const $checkbox = document.querySelector('checkbox')
+const $inputCheck = document.querySelector('checkbox');
 
 
 //status
@@ -86,13 +86,11 @@ $todoAdd.addEventListener('click', () => {
     render();
 });
 
-let chk = todos = [{checked:true}]
 
-chk.addEventListener('click', (e) => {
 
-    window.onload;
-});
-
+$inputCheck.onchange = (e) => {
+    todos = e.checked ? todos.map(todo => ({ ...todo, checked: true })) : todos.map(todo => ({ ...todo, checked: false }));
+}
 
 
 $todoDelete.addEventListener('click', () => {
