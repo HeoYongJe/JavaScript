@@ -52,8 +52,8 @@ function Circle(radius) {
 }
 
 // 인스턴스의 생성
-const circle1 = new Circle(5);  // 반지름이 5인 Circle 객체를 생성
-const circle2 = new Circle(10); // 반지름이 10인 Circle 객체를 생성
+const circle3 = new Circle(5);  // 반지름이 5인 Circle 객체를 생성
+const circle4 = new Circle(10); // 반지름이 10인 Circle 객체를 생성
   
-console.log(circle1.getDiameter()); // 10
-console.log(circle2.getDiameter()); // 20
+console.log(circle3.getDiameter()); // 10
+console.log(circle4.getDiameter()); // 20
