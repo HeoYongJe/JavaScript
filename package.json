@@ -15,7 +15,8 @@
     "eslint-plugin-import": "^2.20.1"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "protractor": "^7.0.0"
   },
   "repository": {
     "type": "git",

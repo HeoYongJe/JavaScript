@@ -36,3 +36,13 @@ function foo() {
 const bar = foo();
 
 foo()
+
+let Copy = function copy(o, p){
+    p = p || {};
+}
+
+
+var a = 10;
+var b = (a > 19) ? "true, up" : "false, down";
+console.log(b); 
+
