@@ -1,7 +1,7 @@
 const macs = [
-    { name: '2019 MacPro 16 MVVJ2KH/A', screen: 16, cpu: 'i7', ram: 16, ssd: 512, weight: 2, price: 2698000 },
+    { name: '2016 MacPro 16 MVVJ2KH/A', screen: 16, cpu: 'i7', ram: 16, ssd: 512, weight: 2, price: 2698000 },
     { name: '2019 MacPro 13 MV962KH/A', screen: 14, cpu: 'i5', ram: 8, ssd: 256, weight: 1.37, price: 1850000 },
-    { name: '2019 MacPro 16 MVVM2KH/A', screen: 16, cpu: 'i9', ram: 16, ssd: 1000, weight: 2, price: 3161000 },
+    { name: '2019 MacPro 19 MVVM2KH/A', screen: 19, cpu: 'i9', ram: 16, ssd: 1000, weight: 2, price: 3161000 },
     { name: '2020 MacAir 13 MVH42KH/A', screen: 13.5, cpu: 'i5', ram: 8, ssd: 512, weight: 1.29, price: 1689000 },
     { name: '2019 MacPro 15 MV912KH/A', screen: 15.4, cpu: 'i9', ram: 16, ssd: 512, weight: 1.83, price: 2942000 }
   ];
@@ -13,13 +13,15 @@ const macs = [
   // 스크린이 16인치 이상이라면 16인치 이상의 노트북 이름을 모두 출력
   
   
-  // for(let i = 0; i < macs.length; i++) {
-  //   if(macs[i].screen >= 16) {
-  //     console.log(macs[i].name);
-  //   };
-  // };
+  for(let i = 0; i < macs.length; i++) {
+    if(macs[i].screen >= 16) {
+      console.log(macs[i].name);
+    };
+  };
   
 
+
+  
 
 function a(mac){
   if(mac.screen >= 16){
@@ -29,10 +31,11 @@ function a(mac){
 
 const macc = macs.forEach(a);
 
+
 //변수 함수(화살표) 매개변수 원시값과 객체 
 //이론이랑 화살표함수
 
-const macArea = macs.filter(mac => mac.screen >=16).map(mac => mac.name)
+const macArea = macs.filter(mac => mac.ram >=8).map(mac => mac.name)
 console.log(macArea)
 // 필터는 새로운 배열 return이 참인것으로 만 이루어지므로 필터로 거르고 map로 돌린다
 
@@ -62,6 +65,7 @@ var result = multiply(5);
  
 console.log(result);
 
-const aa = ['낑깡','바나나','바나나']
+const aa = ['낑깡','바나나','땅콩']
 
-console.log(aa.indexOf('바나나'))
+console.log(aa.indexOf('땅콩'))
+
