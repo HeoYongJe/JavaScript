@@ -22,10 +22,10 @@ function b(){
 
 
 //변수호이스팅
-if(true){
-    let a = 'hyj';
-  }
-  console.log(a);
+// if(true){
+//     let a = 'hyj';
+//   }
+//   console.log(a);
 
 
 //호이스팅에 의한 코드
@@ -34,3 +34,10 @@ if(true){
     a = 'hyj'; //할당
   }
   console.log(a);
+
+  function fruitName(){  
+	console.log("종류: " + fruit);
+  	var fruit = "포도";
+  	console.log("이름: " + fruit);
+}
+fruitName()
