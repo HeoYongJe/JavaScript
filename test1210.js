@@ -8,12 +8,12 @@ console.log(s(4))
 
 //객체 안
 
-let o = {
+let o1 = {
     square: function(x){
         return x * x;
     }
 }
-console.log(o.square(4));
+console.log(o1.square(4));
 
 let arr = [
     x => x * x, 20
@@ -52,3 +52,19 @@ const spr3 = '7';
 console.log(...spr, ...spr2, ...spr3) // 1 2 3 4 5 6 '7'
 
 
+
+//선택적 매개변수
+function getPropertyNames(o,a){
+    if(a === undefined){
+        a = [];
+    }
+    for(let property in o){
+        a.push(property);
+    }
+    return a;
+}
+let o = {x:1}, p = {y:2,z:3};
+let a = getPropertyNames(o);
+a
+let b = getPropertyNames(p,a);
+b
