@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>One</p>
+    <p>Two</p>
+    <p>Three</p>
+    <script>
+        let paragraphs = document.body.getElementsByTagName("p");
+        document.body.insertBefore(paragraphs[2], paragraphs[0]);
+        document.body.replaceChild(paragraphs[2], paragraphs[0]);
+        document.body.removeChild(paragraphs[1]);
+    </script>
+    <!-- remove() 는 노드를 메모리에서 삭제하고 종료
+    반면 removeChild()는 노드를 삭제하는 것이 아닌 부모 노드와의 부모 자식관계를 끊어 DOM 트리에서 해제하는 것
+    최종적으로는 관계를 끊은 해당 노드의 참조를 반환 -->
+</body>
+
+</html>

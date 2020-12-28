@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My home page</title>
+</head>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<body>
+    <pre>Say Hello!</pre>
+    <button onclick="sayHello()">Click</button>
+    <br>
+    <form>
+        <input type="text" id="message" name="message"></input>
+        <input type="submit" id="submit"></input>
+    </form>
+    <script>
+        function sayHello() {
+            /*
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", "http://localhost/list");
+                xhr.send();
+                xhr.onreadystatechange = () => {
+                    document.querySelector("pre").textContent = xhr.response;
+                };
+                event.preventDefault();
+            */
+            /*
+            fetch("http://localhost/list")
+                .then(response => {
+                    return response.text();
+                })
+                .then(user => {
+                    document.querySelector("pre").textContent = user
+                })
+                */
+            /*
+            $.get("http://localhost/list/", function(data) {
+                console.log(data)
+                document.querySelector("pre").textContent = data;
+            });
+            */
+        };
+        let submit = document.querySelector("#submit");
+        submit.addEventListener("click", event => {
+            event.preventDefault();
+            let message = document.getElementById("message").value;
+            console.log(message);
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost/list");
+            xhr.setRequestHeader("content-type", "application/json")
+            xhr.send(JSON.stringify({message}));
+
+
+            // fetch("http://localhost/list", {
+            //         method: "POST",
+            //         headers: new Headers({
+            //             'Content-Type': 'application/json'
+            //         }),
+            //         body: JSON.stringify({
+            //             message
+            //         })
+            //     })
+            //     .then(response => response.json())
+            //     .then(result => document.querySelector("pre").textContent = result)
+
+            //    $.post(
+            //         "http://localhost/list",
+            //         {message},
+            //         function(data) {
+            //             document.querySelector("pre").textContent = data;
+            //         },
+            //         "json"
+            //     );
+
+
+        });
+    </script>
+</body>
+
+</html>

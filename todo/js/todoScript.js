@@ -100,6 +100,11 @@ $todoDelete.addEventListener('click', () => {
     render();
 });
 
+const deleteTodo = ({ target }) => {
+    if (![...target.classList].includes('remove-todo')) return;
+    todos = todos.filter(todo => todo.id !== +target.parentNode.id);
+    render();
+  };
 
 
 // 날짜
