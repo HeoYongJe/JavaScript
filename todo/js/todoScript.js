@@ -113,7 +113,7 @@ const deleteTodo = ({ target }) => {
     todos = todos.filter(todo => todo.id !== +target.parentNode.id);
     render();
   };
-
+ 
 
 // 날짜
 // $dateControl.value = '2020-08-15';
