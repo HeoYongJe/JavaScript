@@ -16,7 +16,7 @@ const $todos = document.querySelector('.todos');
 // const $dateControl = document.querySelector('input[type="date"]');
 const $inputCheck = document.querySelector('checkbox');
 
-
+ 
 //status
 let todos = [];
 
@@ -86,7 +86,15 @@ $todoAdd.addEventListener('click', () => {
     render();
 });
 
-
+// $todoDelete.addEventListener('click', () => {
+//     function delSelected() {
+//         for(let i in $inputCheck) {
+//             if($inputCheck[i].nodeType == 1 && $inputCheck[i].checked == true){
+//                 $todoWriteArea.removeChild($inputCheck[i].parentNode.parentNode);
+//             }
+//         }
+//     }
+// }
 
 $inputCheck.onchange = (e) => {
     todos = e.checked ? todos.map(todo => ({ ...todo, checked: true })) : todos.map(todo => ({ ...todo, checked: false }));
