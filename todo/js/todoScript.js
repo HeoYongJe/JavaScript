@@ -50,7 +50,7 @@ const render = () => {
 
     renderTodo.forEach(todo => {
       str += `<li id="${todo.id}" class="todo-item">
-                <input id="ck-${todo.id}" class="checkbox" type="checkbox" value="">
+                <input id="ck-${todo.id}" class="checkbox" type="checkbox" ${todo.checked ? 'checked' : ''}>
                 <p>${todo.content}</p>
               </li>`;
    
@@ -59,6 +59,11 @@ const render = () => {
 };
 
 
+const countCompleted = () => {
+    const countCom = todos.filter(todo => todo.completed ).length;
+    $completedTodos.innerHTML = countCom;
+    $activeTodos.innerHTML = todos.length - countCom;
+  };
 //자료구조
 //이미 자료를 받았다 치기 때문에 저 자료구조가 렌더를 통해 그려져있어야 한다
 const getTodos = () => {
@@ -67,8 +72,17 @@ const getTodos = () => {
       { id: 2, content: 'CSS', checked: false},
       { id: 3, content: 'Javascript', checked: false}
     ].sort((todo1, todo2) => todo2.id - todo1.id);
+
+    checkedTodos = todos.filter(todo => todo.completed);
+    nonCheckedTodos = todos.filter(todo => !todo.completed);
+    countCompleted();
+
     render()
 };
+
+
+
+
 
 //이벤트
 window.onload = getTodos;
@@ -86,33 +100,34 @@ $todoAdd.addEventListener('click', () => {
     render();
 });
 
-// $todoDelete.addEventListener('click', () => {
-//     function delSelected() {
-//         for(let i in $inputCheck) {
-//             if($inputCheck[i].nodeType == 1 && $inputCheck[i].checked == true){
-//                 $todoWriteArea.removeChild($inputCheck[i].parentNode.parentNode);
-//             }
-//         }
-//     }
+$todoDelete.addEventListener('click', () => {
+   function delSelected() {
+        for(var i in $inputCheck) {
+            if($inputCheck[i].checked == true){
+                $todos.removeChild($inputCheck[i].parentNode);
+            }
+        }
+    } 
+    delSelected()
+})
+
+// $inputCheck.onchange = (e) => {
+//     todos = e.checked ? todos.map(todo => ({ ...todo, checked: true })) : todos.map(todo => ({ ...todo, checked: false }));
 // }
 
-$inputCheck.onchange = (e) => {
-    todos = e.checked ? todos.map(todo => ({ ...todo, checked: true })) : todos.map(todo => ({ ...todo, checked: false }));
-}
 
+// $todoDelete.addEventListener('click', () => {
 
-$todoDelete.addEventListener('click', () => {
+//       todos = todos.filter(todo => todo.checked !== true);    
 
-      todos = todos.filter(todo => todo.checked !== true);    
+//     render();
+// });
 
-    render();
-});
-
-const deleteTodo = ({ target }) => {
-    if (![...target.classList].includes('remove-todo')) return;
-    todos = todos.filter(todo => todo.id !== +target.parentNode.id);
-    render();
-  };
+// const deleteTodo = ({ target }) => {
+//     if (![...target.classList].includes('remove-todo')) return;
+//     todos = todos.filter(todo => todo.id !== +target.parentNode.id);
+//     render();
+//   };
  
 
 // 날짜
