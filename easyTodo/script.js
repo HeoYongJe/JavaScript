@@ -4,7 +4,7 @@ let $list = document.getElementById('list');
 
 $button.addEventListener('click', clickButton);
 let cnt = 1;
-
+let checkBtn = [];
 // function clickButton(){
 //     let temp = document.createElement('li');
 //     temp.innerHTML = input.value;
@@ -17,11 +17,16 @@ function clickButton(){
     temp.setAttribute("id", "li" + cnt);
     temp.innerHTML = input.value;
     temp.innerHTML += "<button class='del' type='button'onclick='remove("+cnt+")'>삭제</button>";
+    temp.innerHTML += "<input class='checkBtn' type='checkbox'></input>"
     list.appendChild(temp);
     cnt++;
 }
 
 function remove(cnt) {
     var li = document.getElementById('li'+cnt);
-    list.removeChild(li);
+    if(checkBtn.ckecked == true) {
+        list.removeChild(li);
+    } else {
+        alert('체크해주세요');
+    }
   }

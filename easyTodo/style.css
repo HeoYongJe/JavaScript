@@ -25,18 +25,32 @@ body{
 #list{
     list-style:none;
     padding:0;
+
 }
 #list li{
     border-bottom: 1px dotted #ddd;
     overflow:hidden;
     font-size: 24px;
     padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    display:flex;
 }
 
 #list .del{
-    float:right;
+    /* float:right; */
     background-color:#fff;
     border: 1px solid #666;
     padding: 5px 10px;
     border-radius: 3px;
+    order: 2;
+}
+#list .checkBtn{
+    /* float:left; */
+    background-color:#fff;
+    border: 1px solid #666;
+    width:18px;
+    height:18px;
+    border-radius: 3px;
+    order:-1;
 }
