@@ -10,14 +10,14 @@ const $todoAdd = document.querySelector('.todoAdd');
 const $todoDelete = document.querySelector('.todoDelete');
 const $writeAdd = document.querySelector('.writeAdd');
 const $layoutBtn = document.querySelector('.layoutBtn');
-const $dateBtn = document.querySelector('.dateBtn'); 
-const $respons = document.querySelector('.respons'); 
-const $todos = document.querySelector('.todos'); 
+const $dateBtn = document.querySelector('.dateBtn');
+const $respons = document.querySelector('.respons');
+const $todos = document.querySelector('.todos');
 // const $dateControl = document.querySelector('input[type="date"]');
 const $inputCheck = document.querySelector('checkbox');
 
- 
-//status
+
+//status 
 let todos = [];
 
 const textOpenArea = () => ([...$todoWriting.classList].includes('textOpen'));
@@ -32,56 +32,59 @@ const setOpen = (boolean) => {
         $todoWriting.classList.add('textOpen');
         $inlineBtn.classList.add('inlineBtn');
         $writeAdd.style.display = 'block';
-        $todoWriteArea.style.display = 'block';   
+        $todoWriteArea.style.display = 'block';
         $todoWriting.innerHTML = 'Close';
-        $layoutBtn.style.display = 'inline-block';  
+        $layoutBtn.style.display = 'inline-block';
     }
 };
 
 const render = () => {
-    
+
     let str = '';
     let renderTodo;
 
-    [...$todoWriteArea.children].forEach(child => {   
+    [...$todoWriteArea.children].forEach(child => {
         if (![...child.classList].includes('active')) return;
         if (child.id === 'todoOpen') renderTodo = todos;
     });
 
     renderTodo.forEach(todo => {
-      str += `<li id="${todo.id}" class="todo-item">
-                <input id="ck-${todo.id}" class="checkbox" type="checkbox" ${todo.checked ? 'checked' : ''}>
+        str += `<li id="${todo.id}" class="todo-item">
+                <input id="ck-${todo.id}" class="checkbox" type="checkbox" ${todo.completed ? 'checked' : ''}>
                 <p>${todo.content}</p>
               </li>`;
-   
+
     });
     $contentList.innerHTML = str;
 };
 
 
-const countCompleted = () => {
-    const countCom = todos.filter(todo => todo.completed ).length;
-    $completedTodos.innerHTML = countCom;
-    $activeTodos.innerHTML = todos.length - countCom;
-  };
 //자료구조
 //이미 자료를 받았다 치기 때문에 저 자료구조가 렌더를 통해 그려져있어야 한다
 const getTodos = () => {
-    todos = [
-      { id: 1, content: 'HTML', checked: false},
-      { id: 2, content: 'CSS', checked: false},
-      { id: 3, content: 'Javascript', checked: false}
+    todos = [{
+            id: 1,
+            content: 'HTML',
+            completed: false
+        },
+        {
+            id: 2,
+            content: 'CSS',
+            completed: false
+        },
+        {
+            id: 3,
+            content: 'Javascript',
+            completed: false
+        }
     ].sort((todo1, todo2) => todo2.id - todo1.id);
 
-    checkedTodos = todos.filter(todo => todo.completed);
-    nonCheckedTodos = todos.filter(todo => !todo.completed);
-    countCompleted();
+    // checkedTodos = todos.filter(todo => todo.completed);
+    // nonCheckedTodos = todos.filter(todo => !todo.completed);
+    // countCompleted();
 
     render()
 };
-
-
-
 
 
 //이벤트
@@ -91,25 +94,26 @@ window.onload = getTodos;
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', () => {
 
-        if($writeAdd.value === '') alert('내용을 입력해 주세요');
-        else(
-        todos = [{ id: todos.length + 1, content: $writeAdd.value, checked: false}, ...todos])
-
-        $writeAdd.value = '';
-        
+    if ($writeAdd.value === '') alert('내용을 입력해 주세요');
+    else(
+        todos = [{
+            id: todos.length + 1,
+            content: $writeAdd.value,
+            checked: false
+        }, ...todos])
+    $writeAdd.value = '';
     render();
 });
 
-$todoDelete.addEventListener('click', () => {
-   function delSelected() {
-        for(var i in $inputCheck) {
-            if($inputCheck[i].checked == true){
-                $todos.removeChild($inputCheck[i].parentNode);
-            }
-        }
-    } 
-    delSelected()
+document.querySelector('.todo-item').addEventListener('click', () => {
+   todos.completed = true;
 })
+
+$todoDelete.addEventListener('click', () => {
+    if(todos.completed == true){
+        todos.removeChild(li);
+    }
+ })
 
 // $inputCheck.onchange = (e) => {
 //     todos = e.checked ? todos.map(todo => ({ ...todo, checked: true })) : todos.map(todo => ({ ...todo, checked: false }));
@@ -128,7 +132,7 @@ $todoDelete.addEventListener('click', () => {
 //     todos = todos.filter(todo => todo.id !== +target.parentNode.id);
 //     render();
 //   };
- 
+
 
 // 날짜
 // $dateControl.value = '2020-08-15';
