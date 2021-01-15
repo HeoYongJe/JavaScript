@@ -19,6 +19,8 @@ const $inputCheck = document.querySelector('checkbox');
 
 //status 
 let todos = [];
+let checkedTodos = [];
+let nonCheckedTodos = [];
 
 const textOpenArea = () => ([...$todoWriting.classList].includes('textOpen'));
 const setOpen = (boolean) => {
@@ -91,6 +93,17 @@ const getTodos = () => {
 window.onload = getTodos;
 
 
+const toggleCompleted = ({ target }) => {
+    todos = todos.map((todo) => (todo.id === +target.parentNode.id ? { ...todo, completed: !todo.completed } : todo));
+  
+    checkedTodos = todos.filter(todo => todo.completed);
+    nonCheckedTodos = todos.filter(todo => !todo.completed);
+
+    render();
+  };
+  
+
+
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', () => {
 
@@ -105,15 +118,12 @@ $todoAdd.addEventListener('click', () => {
     render();
 });
 
-document.querySelector('.todo-item').addEventListener('click', () => {
-   todos.completed = true;
-})
 
-$todoDelete.addEventListener('click', () => {
-    if(todos.completed == true){
-        todos.removeChild(li);
-    }
- })
+const deleteTodo = ({ target }) => {
+    if (![...target.classList].includes('remove-todo')) return;
+    todos = todos.filter(todo => todo.id !== +target.parentNode.id);
+    render();
+  };
 
 // $inputCheck.onchange = (e) => {
 //     todos = e.checked ? todos.map(todo => ({ ...todo, checked: true })) : todos.map(todo => ({ ...todo, checked: false }));

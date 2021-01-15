@@ -110,3 +110,17 @@ html,body{
     height:15px;
     margin-bottom:10px;
   } */
+
+  .remove-todo {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    cursor: pointer;
+    transform: translate3d(0, -50%, 0);
+  }
+  
+  /* todo-item이 호버 상태이면 삭제 버튼을 활성화 */
+  .todo-item:hover > .remove-todo {
+    display: block;
+  }
