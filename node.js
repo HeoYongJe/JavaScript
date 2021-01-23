@@ -11,3 +11,15 @@ getElementById 메소드는 인수로 전달된 id 값을 갖는 첫번째 요�
 document.prototype.quertSelector 메소드는 인수로 전달한 CSS선택자를 만족시키는 하나의 요소 노드를 탐색하여 반환한다
 노드가 여러개인 경우, 첫번째 요소 노드만 반환한다
 만족시키는 요소고 없을 경우 null을 반환
+
+Element.prototype.matches 메소드는 인수로 전달된 선택지에 의해 특정 노드를 탐색 가능한지 확인
+
+<ul id="fruits">
+    <li class="apple">Apple</li>
+    <li class="banana">Banana</li>
+    <li class="orange">Orange</li>
+</ul>
+
+const $apple = document.querySelector('.apple');
+console.log($apple.matches('#fruits > li.apple')); //true
+console.log($apple.matches('#fruits > li.banana')); //false
