@@ -15,7 +15,7 @@ document.prototype.quertSelector 메소드는 인수로 전달한 CSS선택자�
 Element.prototype.matches 메소드는 인수로 전달된 선택지에 의해 특정 노드를 탐색 가능한지 확인
 
 <ul id="fruits">
-    <li class="apple">Apple</li>
+    <li class="apple">Apple<span>사과</span></li>
     <li class="banana">Banana</li>
     <li class="orange">Orange</li>
 </ul>
@@ -23,3 +23,10 @@ Element.prototype.matches 메소드는 인수로 전달된 선택지에 의해 �
 const $apple = document.querySelector('.apple');
 console.log($apple.matches('#fruits > li.apple')); //true
 console.log($apple.matches('#fruits > li.banana')); //false
+
+
+innerHTML 요소 노드의 HTML 마크업을 취득하거나 변경한다
+요소노드의 컨텐츠 영역 내에 포함된 모든 HTML 마크업을 문자열로 반환
+
+textContent 프로퍼티를 참조하면 HTML 마크업을 무시하고 텍스트만 반환하지만 innerHTML 프로퍼티는 HTML 마크업을 그대로 반환
+const $apple = document.querySelector('.apple'); // Apple<span>사과</span>
