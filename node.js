@@ -30,3 +30,11 @@ innerHTML 요소 노드의 HTML 마크업을 취득하거나 변경한다
 
 textContent 프로퍼티를 참조하면 HTML 마크업을 무시하고 텍스트만 반환하지만 innerHTML 프로퍼티는 HTML 마크업을 그대로 반환
 const $apple = document.querySelector('.apple'); // Apple<span>사과</span>
+
+innerHTML 프로퍼티에 HTML 마크업 문자열을 할당하면 유지되어도 좋은 기존의 자식 노드까지 모두 제거하고 처음부터 자식 노드를 생성하여 DOM에 반영한다는 단점이 있다
+이렇게 되면 크로스 사이트 스크립팅 공격에 취약해진다(XSS:Cross site Scripting Attacks) HTML마크앱 내에 js악성 코드가 포함되어 있다면
+파싱 과정에서 그대로 실행될 가능성이 있기 때문이다.
+
+예방하기 위해 DOMPurift 라이브러리를 사용 할 수 있다 
+DOMPurify.sanitize('~~~');
+
