@@ -14,7 +14,7 @@ const $dateBtn = document.querySelector('.dateBtn');
 const $respons = document.querySelector('.respons');
 const $todos = document.querySelector('.todos');
 // const $dateControl = document.querySelector('input[type="date"]');
-const $inputCheck = document.querySelector('checkbox');
+const $inputCheck = document.querySelector('input[type=checkbox]');
 
 
 //status 
@@ -91,19 +91,8 @@ const getTodos = () => {
 
 //이벤트
 window.onload = getTodos;
-
-
-const toggleCompleted = ({ target }) => {
-    todos = todos.map((todo) => (todo.id === +target.parentNode.id ? { ...todo, completed: !todo.completed } : todo));
+window.onclick = $inputCheck;
   
-    checkedTodos = todos.filter(todo => todo.completed);
-    nonCheckedTodos = todos.filter(todo => !todo.completed);
-
-    render();
-  };
-  
-
-
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', () => {
 
@@ -119,23 +108,25 @@ $todoAdd.addEventListener('click', () => {
 });
 
 
-const deleteTodo = ({ target }) => {
-    if (![...target.classList].includes('remove-todo')) return;
-    todos = todos.filter(todo => todo.id !== +target.parentNode.id);
-    render();
-  };
+// const deleteTodo = () => {
+//     // if (![...target.classList].includes('remove-todo')) return;
+//     // todos = todos.filter(todo => todo.id !== +target.parentNode.id);
+//     $inputCheck.classList.replace('checkbox','checkboxChecked');
+//     render();
+//   };
 
 // $inputCheck.onchange = (e) => {
 //     todos = e.checked ? todos.map(todo => ({ ...todo, checked: true })) : todos.map(todo => ({ ...todo, checked: false }));
 // }
 
+$inputCheck.addEventListener('click', () => {
+    $inputCheck = [];
+        // $inputCheck.classList.replace('checkbox','checkboxChecked');
+        $inputCheck.classList.add('checkboxChecked');
 
-// $todoDelete.addEventListener('click', () => {
-
-//       todos = todos.filter(todo => todo.checked !== true);    
-
-//     render();
-// });
+        render();
+      
+});
 
 // const deleteTodo = ({ target }) => {
 //     if (![...target.classList].includes('remove-todo')) return;
