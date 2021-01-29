@@ -14,7 +14,7 @@ const $dateBtn = document.querySelector('.dateBtn');
 const $respons = document.querySelector('.respons');
 const $todos = document.querySelector('.todos');
 // const $dateControl = document.querySelector('input[type="date"]');
-const $inputCheck = document.querySelector('input[type=checkbox]');
+const $inputCheck = document.querySelectorAll('input[type=checkbox]');
 
 
 //status 
@@ -91,7 +91,6 @@ const getTodos = () => {
 
 //이벤트
 window.onload = getTodos;
-window.onclick = $inputCheck;
   
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', () => {
@@ -119,15 +118,15 @@ $todoAdd.addEventListener('click', () => {
 //     todos = e.checked ? todos.map(todo => ({ ...todo, checked: true })) : todos.map(todo => ({ ...todo, checked: false }));
 // }
 
-$inputCheck.addEventListener('click', () => {
-    $inputCheck = [];
-        // $inputCheck.classList.replace('checkbox','checkboxChecked');
-        $inputCheck.classList.add('checkboxChecked');
-
-        render();
+// $inputCheck.addEventListener('click', () => {
+//     $inputCheck = [];
+//         // $inputCheck.classList.replace('checkbox','checkboxChecked');
+//         $inputCheck.classList.add('checkboxChecked');
+//     console.log($inputCheck)
+//         render();
       
-});
-
+// });
+console.log($inputCheck);
 // const deleteTodo = ({ target }) => {
 //     if (![...target.classList].includes('remove-todo')) return;
 //     todos = todos.filter(todo => todo.id !== +target.parentNode.id);
