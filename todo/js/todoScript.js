@@ -14,7 +14,7 @@ const $dateBtn = document.querySelector('.dateBtn');
 const $respons = document.querySelector('.respons');
 const $todos = document.querySelector('.todos');
 // const $dateControl = document.querySelector('input[type="date"]');
-const $inputCheck = document.querySelectorAll('input[type=checkbox]');
+const $inputCheck = document.querySelector('input[type=checkbox]');
 
 
 //status 
@@ -52,7 +52,7 @@ const render = () => {
 
     renderTodo.forEach(todo => {
         str += `<li id="${todo.id}" class="todo-item">
-                <input id="ck-${todo.id}" class="checkbox" type="checkbox" ${todo.completed ? 'checked' : ''}>
+                <input id="ck-${todo.id}" class="checkbox" type="checkbox">
                 <p>${todo.content}</p>
               </li>`;
 
@@ -91,7 +91,8 @@ const getTodos = () => {
 
 //이벤트
 window.onload = getTodos;
-  
+
+
 $todoWriting.addEventListener('click', () => setOpen(textOpenArea()));
 $todoAdd.addEventListener('click', () => {
 
@@ -107,31 +108,16 @@ $todoAdd.addEventListener('click', () => {
 });
 
 
-// const deleteTodo = () => {
-//     // if (![...target.classList].includes('remove-todo')) return;
-//     // todos = todos.filter(todo => todo.id !== +target.parentNode.id);
-//     $inputCheck.classList.replace('checkbox','checkboxChecked');
-//     render();
-//   };
+$inputCheck.addEventListener('click', () =>{
 
-// $inputCheck.onchange = (e) => {
-//     todos = e.checked ? todos.map(todo => ({ ...todo, checked: true })) : todos.map(todo => ({ ...todo, checked: false }));
-// }
+    $inputCheck.classList.add('checkboxChecked');
+    render();
+    
+}); 
 
-// $inputCheck.addEventListener('click', () => {
-//     $inputCheck = [];
-//         // $inputCheck.classList.replace('checkbox','checkboxChecked');
-//         $inputCheck.classList.add('checkboxChecked');
-//     console.log($inputCheck)
-//         render();
-      
-// });
-console.log($inputCheck);
-// const deleteTodo = ({ target }) => {
-//     if (![...target.classList].includes('remove-todo')) return;
-//     todos = todos.filter(todo => todo.id !== +target.parentNode.id);
-//     render();
-//   };
+// $inputCheck.classList.replace('checkbox','checkboxChecked');
+
+
 
 
 // 날짜
