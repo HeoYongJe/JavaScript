@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement()</title>
+</head>
+<body>
+    <!-- tagName
+        생성 할 요소의 유형을 어디에서나 생성 가능
+    -->
+
+    <script>
+        let newDiv = document.createElement('div');
+        let newContent = document.createTextNode("안녕하세요");
+        newDiv.appendChild(newContent);
+
+        let currentDiv = document.getElementById("div1");
+        document.body.insertBefore(newDiv, currentDiv);
+        // insertBefore() 메소드는 참조된 노드 앞에 특정 부모 노드의 자식 노드를 삽입
+</script>
+</body>
+</html>

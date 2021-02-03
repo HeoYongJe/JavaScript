@@ -108,6 +108,7 @@ $todoAdd.addEventListener('click', () => {
 });
 
 
+
 $inputCheck.addEventListener('click', () =>{
 
     $inputCheck.classList.add('checkboxChecked');
